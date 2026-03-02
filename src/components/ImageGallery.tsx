@@ -8,63 +8,99 @@ interface Photo {
     year: string;
     location: string;
     description: string;
-    category: 'career' | 'war' | 'people' | 'daily';
+    category: 'pre-1941' | '1941-1944' | '1945';
 }
 
 const photos: Photo[] = [
     {
         id: '1',
-        url: 'https://imgcdn.tapchicongthuong.vn/thumb/w_1000/tcct-media/23/9/1/1945_64f207b99f453.jpg',
-        title: 'Bác Hồ đọc Tuyên ngôn Độc lập',
-        year: '1945',
-        location: 'Quảng trường Ba Đình, Hà Nội',
-        category: 'career',
-        description: 'Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập khai sinh nước Việt Nam Dân chủ Cộng hòa.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+1',
+        title: '"Một cổ hai tròng" - Lịch sử không có khoảng trống.',
+        year: '1940',
+        location: 'Đông Dương',
+        category: 'pre-1941',
+        description: 'Từ năm 1940, dân tộc ta rơi vào thảm cảnh tăm tối nhất khi cả đế quốc Pháp và phát xít Nhật cùng ráo riết vơ vét, bóc lột. Trong hoàn cảnh đó, nếu không tự đứng lên, sẽ chẳng có phép màu nào xuất hiện.'
     },
     {
         id: '2',
-        url: 'https://cdn2.tuoitre.vn/thumb_w/480/2018/9/1/images19063801-1-read-only-15358012301841934384139.jpg',
-        title: 'Bác Hồ làm việc tại chiến khu Việt Bắc',
-        year: '1947',
-        location: 'Việt Bắc',
-        category: 'war',
-        description: 'Bác Hồ làm việc trong hang đá tại chiến khu Việt Bắc trong những năm đầu của cuộc kháng chiến chống Pháp.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+2',
+        title: 'Xây móng nhà trước cơn bão lớn.',
+        year: '1930 - 1939',
+        location: 'Việt Nam',
+        category: 'pre-1941',
+        description: 'Không có thành công nào thiếu đi sự tập dượt. Hai phong trào cách mạng (1930-1931 và 1936-1939) chính là nền tảng đẫm máu để Đảng và nhân dân ta rèn luyện bản lĩnh, chuẩn bị cho giai đoạn nước rút.'
     },
     {
         id: '3',
-        url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7KEE-v_gXYS69V8kKEldUrIUbbGflyhbDaQ&s',
-        title: 'Bác Hồ và các cháu thiếu nhi',
-        year: '1960',
-        location: 'Phủ Chủ tịch, Hà Nội',
-        category: 'people',
-        description: 'Bác Hồ luôn dành tình cảm yêu thương đặc biệt cho các cháu thiếu niên, nhi đồng.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+3',
+        title: 'Người cầm lái trở về.',
+        year: '28/01/1941',
+        location: 'Pác Bó, Cao Bằng',
+        category: '1941-1944',
+        description: 'Ngày 28/01/1941, Lãnh tụ Nguyễn Ái Quốc trực tiếp về nước. Sự xuất hiện của Người đã mở ra một chương mới: Chuyển hướng chiến lược sinh tử, đặt nhiệm vụ "Giải phóng dân tộc" lên hàng tối cao.'
     },
     {
         id: '4',
-        url: 'https://media.baovanhoa.vn/zoom/1000/uploaded/dovandong/2026_01_11/tat_nuoc_NAWY.jpg',
-        title: 'Bác Hồ tát nước cùng nông dân',
-        year: '1958',
-        location: 'Hà Đông',
-        category: 'daily',
-        description: 'Bác Hồ trực tiếp tham gia lao động cùng bà con nông dân, thể hiện sự gần gũi và giản dị.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+4',
+        title: 'Cú bẻ lái đi trước thời đại.',
+        year: 'Tháng 5/1941',
+        location: 'Pác Bó, Cao Bằng',
+        category: '1941-1944',
+        description: 'Tại Hội nghị Trung ương 8, Đảng ra quyết định tạm gác cách mạng ruộng đất. "Nếu không giải quyết được vấn đề dân tộc giải phóng... thì quyền lợi giai cấp đến vạn năm cũng không đòi lại được".'
     },
     {
         id: '5',
-        url: 'https://vanhoavaphattrien.vn/uploads/images/blog/photongbientap/2022/10/27/dh3aq3-1666831966.jpg',
-        title: 'Bác Hồ quan sát mặt trận Đông Khê',
-        year: '1950',
-        location: 'Cao Bằng',
-        category: 'war',
-        description: 'Bác Hồ trực tiếp ra mặt trận quan sát và chỉ đạo chiến dịch Biên giới Thu Đông 1950.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+5',
+        title: 'Mặt trận Việt Minh - Khối đại đoàn kết vô song.',
+        year: '1941',
+        location: 'Việt Nam',
+        category: '1941-1944',
+        description: 'Để có lực lượng đánh giặc, Đảng lập ra Mặt trận Việt Minh với 10 chính sách thiết thực. Lời kêu gọi không phân biệt thợ thuyền, nông dân hay tư bản, địa chủ... miễn có lòng yêu nước đều là anh em.'
     },
     {
         id: '6',
-        url: 'https://hochiminh.vn/upload/3000001/20220517/a3f1245016f4978a10f0e7e03.jpg',
-        title: 'Nguyễn Ái Quốc tại Đại hội Tours, Pháp',
-        year: '1920',
-        location: 'Tours, Pháp',
-        category: 'career',
-        description: 'Nguyễn Ái Quốc phát biểu tại Đại hội lần thứ XVIII của Đảng Xã hội Pháp, ủng hộ Quốc tế thứ ba.'
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+6',
+        title: 'Rèn thanh gươm chờ ngày vung kiếm.',
+        year: '22/12/1944',
+        location: 'Cao Bằng',
+        category: '1941-1944',
+        description: 'Thành lập ngày 22/12/1944, đây là tiền thân của Quân đội Nhân dân Việt Nam. Chúng ta đã xây dựng quân đội chủ lực từ rất sớm, tuyệt đối không hề "tay không bắt giặc" khi Nhật đầu hàng!'
+    },
+    {
+        id: '7',
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+7',
+        title: 'Không chờ sung rụng!',
+        year: 'Tháng 3/1945',
+        location: 'Ban Thường vụ TW',
+        category: '1945',
+        description: 'Ngay khi Nhật đảo chính Pháp (9/3/1945), Đảng lập tức ra Chỉ thị "Nhật - Pháp bắn nhau và hành động của chúng ta". Cao trào kháng Nhật và phong trào phá kho thóc cứu đói bùng nổ. Ta đã chủ động tấn công từ tận tháng 3!'
+    },
+    {
+        id: '8',
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+8',
+        title: 'Chớp "Thời cơ vàng" thần tốc.',
+        year: 'Giữa tháng 8/1945',
+        location: 'Tân Trào, Tuyên Quang',
+        category: '1945',
+        description: 'Tháng 8/1945, Nhật đầu hàng. Thời cơ chỉ kéo dài chưa đầy 15 ngày trước khi Đồng minh tràn vào. Bộ máy lãnh đạo đã phản ứng với tốc độ ánh sáng: Phát lệnh khởi nghĩa (13/8), Hội nghị Tân Trào (14-15/8) và Đại hội Quốc dân (16/8).'
+    },
+    {
+        id: '9',
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+9',
+        title: 'Càn quét tàn dư phong kiến, thực dân.',
+        year: '19/8 - 30/8/1945',
+        location: 'Cả nước',
+        category: '1945',
+        description: 'Từ ngày 19/08 đến 30/08, một hiệu ứng domino không thể cản phá quét qua 3 miền: Hà Nội, Huế, Sài Gòn giành chính quyền. Chế độ phong kiến ngàn năm chính thức sụp đổ. Sự đồng bộ này là minh chứng rõ nhất của nghệ thuật chớp thời cơ.'
+    },
+    {
+        id: '10',
+        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+10',
+        title: 'Kỷ nguyên Độc lập - Tự do.',
+        year: '02/09/1945',
+        location: 'Quảng trường Ba Đình',
+        category: '1945',
+        description: 'Ngày 02/09/1945, nước Việt Nam Dân chủ Cộng hòa khai sinh. Thắng lợi vĩ đại này là sự hội tụ đỉnh cao giữa điều kiện khách quan và sự chuẩn bị chủ quan 15 năm của Đảng. Khái niệm "ăn may" hoàn toàn bị đập tan!'
     }
 ];
 
@@ -82,10 +118,9 @@ export function ImageGallery({ onClose }: { onClose: () => void }) {
 
     const categories = [
         { id: 'all', label: 'Tất cả' },
-        { id: 'career', label: 'Sự nghiệp' },
-        { id: 'war', label: 'Kháng chiến' },
-        { id: 'people', label: 'Với Nhân dân' },
-        { id: 'daily', label: 'Đời thường' }
+        { id: 'pre-1941', label: 'Trước 1941' },
+        { id: '1941-1944', label: 'Giai đoạn 1941-1944' },
+        { id: '1945', label: 'Năm 1945' }
     ];
 
     return (
@@ -128,8 +163,8 @@ export function ImageGallery({ onClose }: { onClose: () => void }) {
                             <ImageIcon size={24} color="white" />
                         </div>
                         <div>
-                            <h1 style={{ fontSize: '1.4rem', fontWeight: 700, margin: 0, letterSpacing: '-0.02em' }}>Thư Viện Ảnh</h1>
-                            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Tư liệu lịch sử Hồ Chí Minh</p>
+                            <h1 style={{ fontSize: '1.4rem', fontWeight: 700, margin: 0, letterSpacing: '-0.02em' }}>Hành Trình 15 Năm</h1>
+                            <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0, textTransform: 'uppercase', letterSpacing: '0.1em' }}>Kiến tạo "Thời Cơ Vàng"</p>
                         </div>
                     </div>
 

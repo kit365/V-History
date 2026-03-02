@@ -141,7 +141,7 @@ export function Footer() {
                 </li>
                 <li className="flex items-start gap-3 text-white/80">
                   <Mail className="w-5 h-5 text-[#C9A227] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm">lienhe@tutuonghcm.vn</span>
+                  <span className="text-sm">lienhe@lichsudang.vn</span>
                 </li>
                 <li className="flex items-start gap-3 text-white/80">
                   <Phone className="w-5 h-5 text-[#C9A227] flex-shrink-0 mt-0.5" />

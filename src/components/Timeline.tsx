@@ -1,11 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 
 // --- 1. IMPORT HÌNH ẢNH ---
-import khoidauImg from '../utils/picture/khoidauhanhtrinh.png';
-import raditimduongImg from '../utils/picture/raditimduong.png';
-import anhsangtuluancuongImg from '../utils/picture/anhsangtuluancuong.png';
-import thanhlapDangImg from '../utils/picture/thanhlapdang.png';
-import trovetoquocImg from '../utils/picture/trovetoquoc.png';
+import trovetoquocImg from '../picture/pacbo_caobang.png';
+import thanhlapDangImg from '../picture/hoinghi_tw8.png';
+import raditimduongImg from '../picture/thanhlap_quandoi.png';
+import anhsangtuluancuongImg from '../picture/nhatdaochinhphap.png';
+import doanketImg from '../picture/hoinghiquansubacki.png';
+import dangcotheImg from '../picture/lenhtongkhoinghia.png';
+import khoidauhanhtrinhImg from '../picture/khoinghiahanoi.png';
+import doanketmotnguoiImg from '../picture/tantrao.png';
+import cachmanggiaiphongImg from '../picture/hanoi.png';
+import apbucImg from '../utils/picture/apbuc.png';
+import danlachuImg from '../utils/picture/danlachu.png';
+import bachodixaImg from '../utils/picture/bachodixa.png';
 import tuyenngondoclapImg from '../utils/picture/tuyenngondoclap.png';
 
 // Import logo búa liềm từ đường dẫn cục bộ của bạn
@@ -20,87 +27,168 @@ interface TimelineEvent {
   location: string;
   shortDesc: string;
   fullDesc: string;
-  significance: string;
+  significance?: string;
   image: string;
   layout: 'layout-diagonal' | 'layout-split' | 'layout-center' | 'layout-hero';
-  stage: 'prep' | 'boom'; // Mới: Phân chi giai đoạn
+  stage: 'prep' | 'boom';
 }
 
 const timelineEvents: TimelineEvent[] = [
+  // 1. Chuẩn bị lực lượng và chuyển hướng chiến lược (1941 - 1944)
   {
-    id: '1930',
-    year: '1930',
-    date: '3 tháng 2',
-    title: 'Thành Lập Đảng',
-    location: 'Hương Cảng, Trung Quốc',
-    shortDesc: 'Tổ chức lãnh đạo cách mạng ra đời',
-    fullDesc: 'Sự ra đời của Đảng Cộng sản Việt Nam chấm dứt thời kỳ khủng hoảng về đường lối. Từ đây, cách mạng Việt Nam có một tổ chức tiên phong với đường lối đúng đắn, chuẩn bị cho chặng đường đấu tranh sắp tới.',
-    significance: 'Nhân tố quyết định và tiền đề đầu tiên cho mọi thắng lợi của cách mạng.',
-    image: thanhlapDangImg,
+    id: '1941-01',
+    year: '1941',
+    date: '28/01',
+    title: 'Bác Hồ Về Nước',
+    location: 'Pác Bó, Cao Bằng',
+    shortDesc: 'Trực tiếp lãnh đạo cách mạng',
+    fullDesc: 'Lãnh tụ Nguyễn Ái Quốc về nước trực tiếp lãnh đạo cách mạng tại Pác Bó, Cao Bằng.',
+    image: trovetoquocImg,
     layout: 'layout-diagonal',
     stage: 'prep'
   },
   {
-    id: '1941',
+    id: '1941-05',
     year: '1941',
     date: 'Tháng 5',
-    title: 'Hội Nghị TW 8',
-    location: 'Pác Bó, Cao Bằng',
-    shortDesc: 'Đặt nhiệm vụ giải phóng dân tộc lên hàng đầu',
-    fullDesc: 'Hội nghị Trung ương 8 quyết định thay đổi chiến lược: Chuyển hướng chỉ đạo chiến lược, giương cao ngọn cờ giải phóng dân tộc, thành lập Mặt trận Việt Minh để đoàn kết toàn dân.',
-    significance: 'Bước chuyển hướng chiến lược sáng suốt, trực tiếp chuẩn bị cho Tổng khởi nghĩa.',
-    image: trovetoquocImg,
+    title: 'Hội nghị TW 8',
+    location: 'Cao Bằng',
+    shortDesc: 'Chuyển hướng chiến lược',
+    fullDesc: 'Hội nghị Trung ương Đảng lần thứ 8 quyết định đặt nhiệm vụ giải phóng dân tộc lên hàng đầu và thành lập Mặt trận Việt Minh.',
+    image: thanhlapDangImg,
     layout: 'layout-split',
     stage: 'prep'
   },
   {
-    id: '1944',
+    id: '1944-12',
     year: '1944',
-    date: '22 tháng 12',
-    title: 'Thành Lập Quân Đội',
-    location: 'Trần Hưng Đạo, Cao Bằng',
-    shortDesc: 'Vũ trang toàn dân',
-    fullDesc: 'Đội Việt Nam Tuyên truyền Giải phóng quân được thành lập theo chỉ thị của Hồ Chí Minh tại khu rừng Trần Hưng Đạo. Đây là lực lượng nòng cốt bồi dưỡng và phát triển phong trào vũ trang quần chúng.',
-    significance: 'Sự chuẩn bị chu đáo về lực lượng vũ trang cách mạng.',
+    date: '22/12',
+    title: 'Thành lập Quân Đội',
+    location: 'Cao Bằng',
+    shortDesc: 'Việt Nam Tuyên truyền Giải phóng quân',
+    fullDesc: 'Thành lập Đội Việt Nam Tuyên truyền Giải phóng quân (tiền thân của Quân đội Nhân dân Việt Nam).',
     image: raditimduongImg,
     layout: 'layout-center',
     stage: 'prep'
   },
+  // 2. Cao trào kháng Nhật cứu nước (3/1945 - 8/1945)
   {
-    id: '1945-3',
+    id: '1945-03',
     year: '1945',
-    date: '12 tháng 3',
+    date: '09/03',
     title: 'Nhật Đảo Chính Pháp',
-    location: 'Toàn quốc',
-    shortDesc: 'Phát động cao trào kháng Nhật',
-    fullDesc: 'Ngay khi Nhật đảo chính Pháp, Thường vụ TW Đảng ra ngay bản Chỉ thị "Nhật - Pháp bắn nhau và hành động của chúng ta", kịp thời phát động cao trào tiền khởi nghĩa trên cả nước.',
-    significance: 'Sự nhạy bén và nghệ thuật chớp thời cơ tuyệt vời của Đảng.',
+    location: 'Đông Dương',
+    shortDesc: 'Cao trào kháng Nhật',
+    fullDesc: 'Nhật đảo chính Pháp độc chiếm Đông Dương. Ban Thường vụ Trung ương Đảng ra chỉ thị quan trọng: "Nhật - Pháp bắn nhau và hành động của chúng ta".',
     image: anhsangtuluancuongImg,
     layout: 'layout-diagonal',
     stage: 'boom'
   },
   {
-    id: '1945-8',
+    id: '1945-04',
     year: '1945',
-    date: '14-15 tháng 8',
-    title: 'Lệnh Tổng Khởi Nghĩa',
-    location: 'Tân Trào, Tuyên Quang',
-    shortDesc: 'Quyết định lịch sử kịp thời',
-    fullDesc: 'Hội nghị toàn quốc của Đảng và Quốc dân Đại hội Tân Trào quyết định Tổng khởi nghĩa giành chính quyền trước khi quân Đồng minh vào Đông Dương, tận dụng khoảng trống quyền lực khi Nhật đầu hàng.',
-    significance: 'Quyết đoán "dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập".',
-    image: khoidauImg,
+    date: 'Tháng 4',
+    title: 'Hội nghị Quân sự Bắc Kỳ',
+    location: 'Bắc Kỳ',
+    shortDesc: 'Việt Nam Giải phóng quân',
+    fullDesc: 'Hội nghị Quân sự cách mạng Bắc Kỳ thống nhất các lực lượng vũ trang thành Việt Nam Giải phóng quân.',
+    image: doanketImg,
     layout: 'layout-split',
     stage: 'boom'
   },
   {
-    id: '1945-9',
+    id: '1945-08-13',
     year: '1945',
-    date: '2 tháng 9',
+    date: '13/08',
+    title: 'Lệnh Tổng Khởi Nghĩa',
+    location: 'Toàn quốc',
+    shortDesc: 'Phát động Tổng khởi nghĩa',
+    fullDesc: 'Phát động Tổng khởi nghĩa trên toàn quốc ngay khi Nhật hoàng tuyên bố đầu hàng Đồng minh.',
+    image: dangcotheImg,
+    layout: 'layout-center',
+    stage: 'boom'
+  },
+  {
+    id: '1945-08-14',
+    year: '1945',
+    date: '14-15/08',
+    title: 'Hội nghị Tân Trào',
+    location: 'Tân Trào',
+    shortDesc: 'Chớp thời cơ vàng',
+    fullDesc: 'Hội nghị toàn quốc của Đảng tại Tân Trào quyết định phương châm đánh chiếm những nơi chắc thắng.',
+    image: khoidauhanhtrinhImg,
+    layout: 'layout-diagonal',
+    stage: 'boom'
+  },
+  {
+    id: '1945-08-16',
+    year: '1945',
+    date: '16/08',
+    title: 'Đại hội Quốc dân Tân Trào',
+    location: 'Tân Trào',
+    shortDesc: 'Ủy ban Dân tộc Giải phóng',
+    fullDesc: 'Đại hội Quốc dân Tân Trào thông qua 10 chính sách của Việt Minh và bầu ra Ủy ban Dân tộc Giải phóng Việt Nam do Hồ Chí Minh làm Chủ tịch.',
+    image: doanketmotnguoiImg,
+    layout: 'layout-split',
+    stage: 'boom'
+  },
+  // 3. Diễn biến Tổng khởi nghĩa Tháng Tám
+  {
+    id: '1945-08-19',
+    year: '1945',
+    date: '19/08',
+    title: 'Khởi nghĩa Hà Nội',
+    location: 'Hà Nội',
+    shortDesc: 'Thủ đô giành chính quyền',
+    fullDesc: 'Khởi nghĩa thắng lợi tại Thủ đô Hà Nội.',
+    image: cachmanggiaiphongImg,
+    layout: 'layout-center',
+    stage: 'boom'
+  },
+  {
+    id: '1945-08-23',
+    year: '1945',
+    date: '23/08',
+    title: 'Khởi nghĩa Huế',
+    location: 'Huế',
+    shortDesc: 'Trung Kỳ giành chính quyền',
+    fullDesc: 'Khởi nghĩa thắng lợi tại Huế.',
+    image: apbucImg,
+    layout: 'layout-diagonal',
+    stage: 'boom'
+  },
+  {
+    id: '1945-08-25',
+    year: '1945',
+    date: '25/08',
+    title: 'Khởi nghĩa Sài Gòn',
+    location: 'Sài Gòn',
+    shortDesc: 'Dẫn dắt bởi Việt Minh Tiền phong',
+    fullDesc: 'Khởi nghĩa thắng lợi tại Sài Gòn dưới sự chỉ đạo của nhóm Việt Minh Tiền phong.',
+    image: danlachuImg,
+    layout: 'layout-split',
+    stage: 'boom'
+  },
+  {
+    id: '1945-08-30',
+    year: '1945',
+    date: '30/08',
+    title: 'Vua Bảo Đại Thoái Vị',
+    location: 'Ngọ Môn, Huế',
+    shortDesc: 'Chấm dứt chế độ phong kiến',
+    fullDesc: 'Vua Bảo Đại thoái vị tại Ngọ Môn (Huế), chấm dứt chế độ phong kiến.',
+    image: bachodixaImg,
+    layout: 'layout-center',
+    stage: 'boom'
+  },
+  {
+    id: '1945-09-02',
+    year: '1945',
+    date: '02/09',
     title: 'Tuyên Ngôn Độc Lập',
-    location: 'Ba Đình, Hà Nội',
-    shortDesc: 'Trái ngọt của 15 năm chuẩn bị',
-    fullDesc: 'Thắng lợi nhanh chóng và ít đổ máu của Cách mạng Tháng Tám không phải do "nhặt được chính quyền", mà là thành quả tất yếu của quá trình đấu tranh gian khổ, chuẩn bị kỹ lưỡng về mọi mặt.',
-    significance: 'Nước Việt Nam Dân chủ Cộng hòa ra đời, khẳng định thắng lợi của sự chủ động tiến công.',
+    location: 'Quảng trường Ba Đình',
+    shortDesc: 'Ngày Quốc Khánh',
+    fullDesc: 'Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình, khai sinh nước Việt Nam Dân chủ Cộng hòa.',
     image: tuyenngondoclapImg,
     layout: 'layout-hero',
     stage: 'boom'
@@ -285,15 +373,6 @@ export function Timeline() {
         <div className="header-section">
           <div className="header-eyebrow">Dòng Chảy Lịch Sử</div>
           <h2 className="header-title">15 Năm & 15 Ngày</h2>
-
-          <div className="timeline-stages">
-            <div className={`stage ${currentEvent.stage === 'prep' ? 'active' : ''}`} style={{ color: '#C9A227' }}>
-              <div className="stage-dot-prep"></div> Tích lũy (Hạ tầng)
-            </div>
-            <div className={`stage ${currentEvent.stage === 'boom' ? 'active' : ''}`} style={{ color: '#8B2323' }}>
-              <div className="stage-dot-boom"></div> Bùng nổ (Thành quả)
-            </div>
-          </div>
         </div>
 
         <div className="timeline-body">
@@ -322,7 +401,7 @@ export function Timeline() {
                     <h2 className="title" style={{ color: event.stage === 'prep' ? '#1A1A1A' : 'var(--primary)' }}>{event.title}</h2>
                     <div className="description-box" style={{ borderLeftColor: event.stage === 'prep' ? 'var(--accent)' : 'var(--primary)' }}>
                       <p className="full-desc">{event.fullDesc}</p>
-                      <p className="significance">{event.significance}</p>
+                      {event.significance && <p className="significance">{event.significance}</p>}
                     </div>
                   </div>
                 </div>

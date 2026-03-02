@@ -1,32 +1,19 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Presentation, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 import { Hero } from './components/Hero';
 import { Introduction } from './components/Introduction';
-import { DeclarationVideo } from './components/DeclarationVideo';
-import { LiberationRevolution } from './components/LiberationRevolution';
-import { KeyThoughts } from './components/KeyThoughts';
 import { Timeline } from './components/Timeline';
-import { Quotes } from './components/Quotes';
 import { Footer } from './components/Footer';
-import { HousePresentation } from './components/HousePresentation';
-import { Biography } from './components/Biography';
-import { KnowledgeQuiz } from './components/KnowledgeQuiz';
 import { Conclusion } from './components/Conclusion';
 import { FloatingLotus } from './components/FloatingLotus';
 import { GoldenOpportunity } from './components/GoldenOpportunity';
-import { DataComparison } from './components/DataComparison';
 import { CustomCursor } from './components/CustomCursor';
 import { Archive } from './components/Archive';
 import { ImageGallery } from './components/ImageGallery';
-import { DigitalMuseum } from './components/DigitalMuseum';
-import { DailyInspiration } from './components/DailyInspiration';
 import { Soundscape } from './components/Soundscape';
 
 export default function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [showPresentation, setShowPresentation] = useState(false);
-  const [showBiography, setShowBiography] = useState(false);
   const [showArchive, setShowArchive] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
 
@@ -47,18 +34,7 @@ export default function App() {
       observer.observe(section);
     });
 
-    return () => observer.disconnect();
   }, []);
-
-  // Nếu đang xem Presentation → render fullscreen
-  if (showPresentation) {
-    return <HousePresentation onClose={() => setShowPresentation(false)} />;
-  }
-
-  // Nếu đang xem Biography → render fullscreen
-  if (showBiography) {
-    return <Biography onClose={() => setShowBiography(false)} />;
-  }
 
   // Nếu đang xem Archive → render fullscreen
   if (showArchive) {
@@ -74,23 +50,15 @@ export default function App() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
     }
   };
 
   const navItems = [
-    { id: 'gioi-thieu', label: 'Giới Thiệu' },
-    { id: 'tu-tuong', label: 'Bối cảnh' },
-    { id: 'cam-hung', label: 'Khoảnh khắc' },
-    { id: 'thoi-co', label: 'Thời cơ' },
-    { id: 'doi-chieu', label: 'Nội lực' },
-    { id: 'lich-su', label: 'Dòng thời gian' },
-    { id: 'bao-tang-so', label: 'Bảo tàng số' },
-    { id: 'cach-mang-giai-phong', label: 'Bài học' },
-    { id: 'tuyen-ngon', label: 'Tuyên Ngôn' },
-    { id: 'trac-nghiem', label: 'Trắc nghiệm' },
-    { id: 'trich-dan', label: 'Trích dẫn' },
-    { id: 'ket-luan', label: 'Lời kết' },
+    { id: 'hero', label: 'Mở Đầu' },
+    { id: 'gioi-thieu', label: 'Lời Đồn' },
+    { id: 'lich-su', label: 'Khái Quát' },
+    { id: 'thoi-co', label: 'Thời Cơ' },
+    { id: 'ket-luan', label: 'Tổng Kết' },
   ];
 
   return (
@@ -116,111 +84,60 @@ export default function App() {
         zIndex: 50,
         boxShadow: '0 4px 60px rgba(0,0,0,0.3)'
       }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
+          <div className="flex justify-between items-center h-20 w-full relative">
             {/* Logo */}
             <div className="flex items-center gap-6">
               <span className="text-xl text-white font-bold tracking-tighter text-historical">
                 DECODE<span className="text-gold-accent">1945</span>
               </span>
-
-              <div className="h-6 w-px bg-white/20 hidden md:block" />
-
-              {/* Quick Actions */}
-              <div className="hidden sm:flex items-center gap-4">
-                <button
-                  onClick={() => setShowBiography(true)}
-                  className="px-4 py-2 bg-gold-accent text-ink-black text-[10px] font-bold tracking-widest uppercase rounded-sm hover:scale-105 transition-transform"
-                >
-                  Tiểu Sử Bác Hồ
-                </button>
-              </div>
             </div>
-
-            {/* Desktop Menu */}
-            <div className="hidden xl:flex items-center gap-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-[10px] font-bold tracking-[0.2em] text-white uppercase hover:text-gold-accent transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden text-white p-2"
-            >
-              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
           </div>
-
-          {/* Mobile Menu */}
-          {mobileMenuOpen && (
-            <div className="xl:hidden pb-10 pt-4 border-t border-white/10 animate-in fade-in slide-in-from-top-4 duration-300">
-              <div className="grid grid-cols-2 gap-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className="text-[11px] font-bold text-white uppercase tracking-widest py-3 hover:text-gold-accent text-left"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </nav>
 
+      {/* Timeline Nav Menu (Fixed Layout) */}
+      <div
+        className="fixed top-1/2 -translate-y-1/2 flex flex-col items-end mix-blend-difference pointer-events-auto"
+        style={{ right: '16px', zIndex: 99999 }}
+      >
+        <div className="relative flex flex-col gap-8 sm:gap-12 items-end">
+          {/* Continuous Line Behind Dots */}
+          <div className="absolute top-2 bottom-2 right-[3px] w-[2px] bg-white/30 pointer-events-none" />
+
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="group relative flex flex-row items-center justify-end gap-3 outline-none cursor-pointer hover:bg-transparent"
+              aria-label={item.label}
+              style={{ padding: '4px 0', border: 'none', background: 'transparent' }}
+            >
+              {/* Timeline Label - White with mix-blend-difference */}
+              <span
+                className="font-sans text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 whitespace-nowrap text-white/60 group-hover:text-white group-hover:font-bold"
+              >
+                {item.label}
+              </span>
+
+              {/* The Dot Indicator */}
+              <div
+                className="w-2 h-2 rounded-full transition-all duration-300 relative z-10 bg-white/50 group-hover:bg-white group-hover:scale-150"
+              />
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* Main Content */}
       <main className="pt-20">
-        <Hero onOpenArchive={() => setShowArchive(true)} onOpenBiography={() => setShowBiography(true)} />
-        <Introduction />
-        <KeyThoughts />
-        <DailyInspiration />
-        <GoldenOpportunity />
-        <DataComparison />
-        <Timeline />
-        <DigitalMuseum />
-        <LiberationRevolution />
-        <DeclarationVideo />
-        <KnowledgeQuiz />
-        <Quotes />
-        <Conclusion />
+        <div id="hero"><Hero onOpenArchive={() => setShowArchive(true)} onOpenGallery={() => setShowGallery(true)} /></div>
+        <div id="gioi-thieu"><Introduction /></div>
+        <div id="lich-su"><Timeline /></div>
+        <div id="thoi-co"><GoldenOpportunity /></div>
+        <div id="ket-luan"><Conclusion /></div>
       </main>
       <Footer />
-
-      {/* Floating Presentation Button */}
-      <button
-        onClick={() => setShowPresentation(true)}
-        style={{
-          position: 'fixed',
-          bottom: 32,
-          left: 32,
-          zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          gap: 10,
-          background: 'linear-gradient(135deg, #7B2D3E, #5C2230)',
-          color: 'white',
-          padding: '14px 24px',
-          borderRadius: 100,
-          border: 'none',
-          cursor: 'pointer',
-          boxShadow: '0 8px 30px rgba(123, 45, 62, 0.4)',
-          transition: 'all 0.3s ease',
-          fontFamily: 'system-ui, sans-serif'
-        }}
-      >
-        <Presentation className="w-5 h-5" />
-        <span style={{ fontSize: '0.85rem', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>XÂY NHÀ</span>
-      </button>
 
       {/* Back to Top Button */}
       <button
@@ -254,6 +171,6 @@ export default function App() {
       >
         <ChevronRight className="w-6 h-6 rotate-[-90deg]" />
       </button>
-    </div>
+    </div >
   );
 }

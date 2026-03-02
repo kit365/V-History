@@ -1,266 +1,179 @@
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+
 interface HeroProps {
   onOpenArchive: () => void;
   onOpenBiography: () => void;
 }
 
 export function Hero({ onOpenArchive, onOpenBiography }: HeroProps) {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -150]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 1.1]);
+
   return (
-    <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ background: 'linear-gradient(180deg, #F5F0E8 0%, #FDFBF7 40%, #F5F0E8 100%)' }}>
-        {/* Decorative glow effects */}
+    <section
+      ref={containerRef}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(180deg, #F5F0E8 0%, #FDFBF7 40%, #F5F0E8 100%)' }}
+    >
+      {/* Decorative Parallax Background Elements */}
+      <motion.div
+        style={{ y: y1, opacity }}
+        className="absolute inset-0 z-0 pointer-events-none"
+      >
         <div style={{
           position: 'absolute',
-          top: '10%',
-          right: '10%',
+          top: '15%',
+          right: '5%',
+          width: 500,
+          height: 500,
+          background: 'radial-gradient(circle, rgba(123, 45, 62, 0.08) 0%, transparent 70%)',
+          borderRadius: '50%',
+          filter: 'blur(100px)'
+        }} />
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          left: '-5%',
           width: 400,
           height: 400,
-          background: 'radial-gradient(circle, rgba(123, 45, 62, 0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(201, 162, 39, 0.1) 0%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(80px)'
         }} />
-        <div style={{
-          position: 'absolute',
-          bottom: '20%',
-          left: '5%',
-          width: 350,
-          height: 350,
-          background: 'radial-gradient(circle, rgba(201, 162, 39, 0.1) 0%, transparent 70%)',
-          borderRadius: '50%',
-          filter: 'blur(60px)'
-        }} />
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: 600,
-          height: 600,
-          background: 'radial-gradient(circle, rgba(123, 45, 62, 0.03) 0%, transparent 50%)',
-          borderRadius: '50%'
-        }} />
+      </motion.div>
 
-
-
-
-        {/* Hero Content */}
-        <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center py-16">
-
-          {/* Historical period */}
-          <div className="mb-16" style={{ animation: 'fadeIn 1s ease-out' }}>
-            <div className="flex items-center justify-center gap-8 mb-3">
-              <div style={{ width: '80px', height: '1px', backgroundColor: '#7B2D3E', opacity: 0.3 }}></div>
-              <span
-                className="text-xs font-medium tracking-widest"
-                style={{
-                  fontFamily: 'system-ui, sans-serif',
-                  color: '#7B2D3E',
-                  letterSpacing: '0.2em'
-                }}
-              >
-                THÁNG 8 NĂM 1945
-              </span>
-              <div style={{ width: '80px', height: '1px', backgroundColor: '#7B2D3E', opacity: 0.3 }}></div>
-            </div>
-          </div>
-
-          {/* Main heading */}
-          <div className="mb-16" style={{ animation: 'fadeInUp 1s ease-out', fontFamily: "'Playfair Display', Georgia, serif" }}>
-            {/* Subtitle */}
-            <div
-              className="text-2xl sm:text-3xl md:text-4xl font-light mb-8"
-              style={{
-                color: '#4A4A4A',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase'
-              }}
-            >
-              CÁCH MẠNG
-            </div>
-
-            {/* Main title */}
-            <h1
-              className="font-bold mb-12"
-              style={{
-                color: '#1A1A1A',
-                letterSpacing: '0.05em',
-                fontSize: 'clamp(3rem, 10vw, 8rem)',
-                lineHeight: '1.1',
-                whiteSpace: 'nowrap'
-              }}
-            >
-              THÁNG TÁM
-            </h1>
-
-            {/* Decorative element */}
-            <div className="flex justify-center items-center gap-4 mb-12">
-              <div style={{ width: '60px', height: '2px', background: 'linear-gradient(to right, transparent, #7B2D3E)' }}></div>
-              <div style={{ width: '8px', height: '8px', backgroundColor: '#C9A227', transform: 'rotate(45deg)' }}></div>
-              <div style={{ width: '60px', height: '2px', background: 'linear-gradient(to left, transparent, #7B2D3E)' }}></div>
-            </div>
-          </div>
-
-          {/* Quote */}
-          <div className="max-w-2xl mx-auto mb-16" style={{ animation: 'fadeIn 1.5s ease-out' }}>
-            <p
-              className="text-lg sm:text-xl font-light italic leading-relaxed"
-              style={{ fontFamily: "'Lora', Georgia, serif", color: '#4A4A4A' }}
-            >
-              "Thắng lợi của Cách mạng Tháng Tám là một sự 'ăn may' của lịch sử hay là kết quả tất yếu của 15 năm chuẩn bị chu đáo?"
-            </p>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16" style={{ animation: 'fadeInUp 1.5s ease-out' }}>
-            <button
-              onClick={onOpenArchive}
-              style={{
-                padding: '14px 32px',
-                background: '#7B2D3E',
-                color: 'white',
-                border: 'none',
-                borderRadius: 8,
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase' as const,
-                cursor: 'pointer',
-                boxShadow: '0 4px 15px rgba(123, 45, 62, 0.3)',
-                transition: 'all 0.2s ease',
-                fontFamily: 'system-ui, sans-serif'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#5C2230';
-                e.currentTarget.style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#7B2D3E';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              THƯ VIỆN DI SẢN
-            </button>
-
-            <button
-              onClick={() => document.getElementById('gioi-thieu')?.scrollIntoView({ behavior: 'smooth' })}
-              style={{
-                padding: '14px 32px',
-                background: 'transparent',
-                color: '#7B2D3E',
-                border: '2px solid #7B2D3E',
-                borderRadius: 8,
-                fontSize: '0.8rem',
-                fontWeight: 600,
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase' as const,
-                cursor: 'pointer',
-                transition: 'all 0.2s ease',
-                fontFamily: 'system-ui, sans-serif'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#7B2D3E';
-                e.currentTarget.style.color = 'white';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.color = '#7B2D3E';
-              }}
-            >
-              Tìm Hiểu Thêm
-            </button>
-          </div>
-        </div>
-
-        {/* Scroll indicator - Simple and elegant */}
-        <div
-          className="absolute left-1/2 z-20"
-          style={{
-            bottom: '2.5rem',
-            transform: 'translateX(-50%)',
-            animation: 'bounce 2s ease-in-out infinite'
-          }}
+      {/* Hero Content */}
+      <motion.div
+        style={{ y: y2, scale }}
+        className="relative z-10 w-full max-w-5xl mx-auto px-6 text-center py-20"
+      >
+        {/* Historical period with motion */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="mb-12 flex items-center justify-center gap-6"
         >
-          <div className="text-center" style={{ opacity: 0.5 }}>
-            <div
-              className="mx-auto mb-2"
-              style={{
-                width: '24px',
-                height: '36px',
-                border: '2px solid #6B6B6B',
-                borderRadius: '12px',
-                position: 'relative'
-              }}
-            >
-              <div
-                style={{
-                  width: '4px',
-                  height: '8px',
-                  backgroundColor: '#7B2D3E',
-                  borderRadius: '2px',
-                  position: 'absolute',
-                  top: '6px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  animation: 'scrollDot 2s ease-in-out infinite'
-                }}
-              ></div>
-            </div>
-            <div
-              className="text-xs tracking-widest"
-              style={{
-                fontFamily: 'system-ui, sans-serif',
-                color: '#6B6B6B',
-                letterSpacing: '0.15em',
-                fontSize: '0.65rem'
-              }}
-            >
-              SCROLL
-            </div>
-          </div>
+          <div className="h-px w-12 sm:w-24 bg-maroon-primary/30" />
+          <span className="text-[10px] sm:text-xs font-bold tracking-[0.4em] text-maroon-primary uppercase">
+            Hào khí Việt Nam • 1945
+          </span>
+          <div className="h-px w-12 sm:w-24 bg-maroon-primary/30" />
+        </motion.div>
+
+        {/* Main heading with stagger effect */}
+        <div className="mb-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4 }}
+            className="text-2xl sm:text-3xl md:text-5xl font-light text-[#4A4A4A] tracking-[0.2em] uppercase mb-4 text-historical"
+          >
+            CÁCH MẠNG
+          </motion.h2>
+
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+            className="text-[4rem] sm:text-[6rem] md:text-[9rem] font-black text-ink-black tracking-tighter leading-none mb-8 text-historical"
+          >
+            THÁNG <span className="text-maroon-primary">8</span>
+          </motion.h1>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 120 }}
+            transition={{ duration: 1, delay: 1.2 }}
+            className="h-1 bg-gold-accent mx-auto"
+          />
         </div>
 
-        {/* CSS Animations */}
-        <style>{`
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-          
-          @keyframes fadeInUp {
-            from {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-          
-          @keyframes bounce {
-            0%, 100% {
-              transform: translateX(-50%) translateY(0);
-            }
-            50% {
-              transform: translateX(-50%) translateY(-8px);
-            }
-          }
-          
-          @keyframes scrollDot {
-            0% {
-              transform: translateX(-50%) translateY(0);
-              opacity: 1;
-            }
-            100% {
-              transform: translateX(-50%) translateY(16px);
-              opacity: 0;
-            }
-          }
-        `}</style>
-      </section >
-    </>
+        {/* Quote with fade in */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 1.4 }}
+          className="max-w-2xl mx-auto mb-16"
+        >
+          <p className="text-xl sm:text-2xl font-medium italic leading-relaxed text-[#4A4A4A] text-body-historical">
+            "Nay thời cơ đã đến, dù phải đốt cháy cả dãy Trường Sơn cũng phải kiên quyết giành cho được độc lập!"
+          </p>
+          <footer className="mt-4 text-sm font-bold tracking-widest text-maroon-primary opacity-60">
+            — HỒ CHÍ MINH
+          </footer>
+        </motion.div>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+        >
+          <button
+            onClick={onOpenArchive}
+            className="group relative px-10 py-5 bg-maroon-primary text-white overflow-hidden rounded-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(123,45,62,0.4)]"
+          >
+            <span className="relative z-10 text-xs font-bold tracking-widest uppercase">Thư Viện Di Sản</span>
+            <div className="absolute inset-0 bg-maroon-dark transform translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
+          </button>
+
+          <button
+            onClick={() => document.getElementById('gioi-thieu')?.scrollIntoView({ behavior: 'smooth' })}
+            className="px-10 py-5 border-2 border-maroon-primary text-maroon-primary text-xs font-bold tracking-widest uppercase transition-all duration-300 hover:bg-maroon-primary hover:text-white rounded-sm"
+          >
+            Khám phá lịch sử
+          </button>
+        </motion.div>
+      </motion.div>
+
+      {/* Floating Elements (Pure CSS) */}
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+        {[...Array(6)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute animate-float opacity-10"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${i * 1.5}s`,
+              fontSize: `${20 + Math.random() * 40}px`
+            }}
+          >
+            🌸
+          </div>
+        ))}
+      </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        style={{ opacity }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+      >
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-px h-24 bg-gradient-to-b from-maroon-primary/50 to-transparent" />
+          <span className="text-[10px] font-bold tracking-[0.3em] text-[#6B6B6B] vertical-text uppercase">
+            Cuộn để xem
+          </span>
+        </div>
+      </motion.div>
+
+      <style>{`
+        .vertical-text {
+          writing-mode: vertical-rl;
+          text-orientation: mixed;
+        }
+      `}</style>
+    </section>
   );
 }

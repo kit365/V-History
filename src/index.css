@@ -2281,8 +2281,133 @@ html {
     transform: translateY(-25%);
   }
 
+
   50% {
     animation-timing-function: cubic-bezier(0, 0, .2, 1);
     transform: none;
   }
+}
+
+/* --- PREMIUM HISTORICAL AESTHETICS --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Outfit:wght@100..900&display=swap');
+
+:root {
+  --sepia-100: #F5F0E8;
+  --sepia-200: #EBE3D5;
+  --sepia-300: #DCD0BC;
+  --maroon-primary: #7B2D3E;
+  --maroon-dark: #5C2230;
+  --gold-accent: #C9A227;
+  --ink-black: #1A1A1A;
+}
+
+.historical-grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url('https://www.transparenttextures.com/patterns/cardboard-flat.png');
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 9998;
+  animation: grain-dance 8s steps(10) infinite;
+}
+
+@keyframes grain-dance {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -5%)
+  }
+
+  20% {
+    transform: translate(-10%, 5%)
+  }
+
+  30% {
+    transform: translate(5%, -10%)
+  }
+
+  40% {
+    transform: translate(-5%, 15%)
+  }
+
+  50% {
+    transform: translate(-10%, 5%)
+  }
+
+  60% {
+    transform: translate(15%, 0)
+  }
+
+  70% {
+    transform: translate(0, 10%)
+  }
+
+  80% {
+    transform: translate(-15%, 0)
+  }
+
+  90% {
+    transform: translate(10%, 5%)
+  }
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, 0.15) 100%);
+  pointer-events: none;
+  z-index: 9997;
+}
+
+.text-historical {
+  font-family: 'Playfair Display', serif;
+}
+
+.text-body-historical {
+  font-family: 'Lora', serif;
+}
+
+.glow-maroon {
+  box-shadow: 0 0 30px rgba(123, 45, 62, 0.2);
+}
+
+.parallax-wrapper {
+  perspective: 10px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

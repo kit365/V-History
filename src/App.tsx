@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Presentation, User, ChevronRight } from 'lucide-react';
+import { motion, useScroll } from 'framer-motion';
 import { Hero } from './components/Hero';
 import { Introduction } from './components/Introduction';
 import { DeclarationVideo } from './components/DeclarationVideo';
@@ -18,7 +19,9 @@ import { DataComparison } from './components/DataComparison';
 import { CustomCursor } from './components/CustomCursor';
 import { Archive } from './components/Archive';
 import { ImageGallery } from './components/ImageGallery';
-import { Library, Image as ImageIcon } from 'lucide-react';
+import { DigitalMuseum } from './components/DigitalMuseum';
+import { DailyInspiration } from './components/DailyInspiration';
+import { Soundscape } from './components/Soundscape';
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,6 +29,26 @@ export default function App() {
   const [showBiography, setShowBiography] = useState(false);
   const [showArchive, setShowArchive] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+
+  // Scroll reveal logic
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.add('section-reveal');
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Nếu đang xem Presentation → render fullscreen
   if (showPresentation) {
@@ -58,9 +81,11 @@ export default function App() {
   const navItems = [
     { id: 'gioi-thieu', label: 'Giới Thiệu' },
     { id: 'tu-tuong', label: 'Bối cảnh' },
+    { id: 'cam-hung', label: 'Khoảnh khắc' },
     { id: 'thoi-co', label: 'Thời cơ' },
     { id: 'doi-chieu', label: 'Nội lực' },
     { id: 'lich-su', label: 'Dòng thời gian' },
+    { id: 'bao-tang-so', label: 'Bảo tàng số' },
     { id: 'cach-mang-giai-phong', label: 'Bài học' },
     { id: 'tuyen-ngon', label: 'Tuyên Ngôn' },
     { id: 'trac-nghiem', label: 'Trắc nghiệm' },
@@ -69,146 +94,56 @@ export default function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F0E8]">
+    <div className="min-h-screen bg-[#F5F0E8] overflow-x-hidden">
+      <motion.div
+        className="fixed top-20 left-0 right-0 h-1 bg-gold-accent origin-left z-[51]"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <div className="historical-grain" />
+      <div className="vignette" />
       <CustomCursor />
       <FloatingLotus />
+      <Soundscape />
+
       {/* Navigation */}
       <nav style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
-        background: 'linear-gradient(180deg, rgba(45, 26, 26, 0.95) 0%, rgba(92, 34, 48, 0.9) 100%)',
-        backdropFilter: 'blur(10px)',
+        background: 'linear-gradient(180deg, rgba(45, 26, 26, 0.98) 0%, rgba(92, 34, 48, 0.95) 100%)',
+        backdropFilter: 'blur(15px)',
         zIndex: 50,
-        boxShadow: '0 4px 20px rgba(0,0,0,0.15)'
+        boxShadow: '0 4px 60px rgba(0,0,0,0.3)'
       }}>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex items-center gap-4">
-              <span style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontSize: '1.2rem',
-                color: 'white',
-                fontWeight: 600
-              }}>
-                Cách Mạng <span style={{ color: '#C9A227' }}>Tháng 8</span>
+            <div className="flex items-center gap-6">
+              <span className="text-xl text-white font-bold tracking-tighter text-historical">
+                DECODE<span className="text-gold-accent">1945</span>
               </span>
-              {/* Biography Button */}
-              <button
-                onClick={() => setShowBiography(true)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  background: '#C9A227',
-                  color: '#1A1A1A',
-                  padding: '8px 14px',
-                  borderRadius: 6,
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase' as const,
-                  border: 'none',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontFamily: 'system-ui, sans-serif'
-                }}
-              >
-                <User className="w-3 h-3" />
-                <span className="hidden sm:inline">Tổng khởi nghĩa</span>
-                <span className="sm:hidden">1945</span>
-              </button>
-              {/* Archive Button */}
-              <button
-                onClick={() => setShowArchive(true)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  background: 'rgba(255,255,255,0.1)',
-                  color: 'white',
-                  padding: '8px 14px',
-                  borderRadius: 6,
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase' as const,
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontFamily: 'system-ui, sans-serif'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                }}
-              >
-                <Library className="w-3 h-3" />
-                <span className="hidden sm:inline">Thư Viện</span>
-                <span className="sm:hidden">Sách</span>
-              </button>
-              {/* Gallery Button */}
-              <button
-                onClick={() => setShowGallery(true)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  background: 'rgba(255,255,255,0.1)',
-                  color: 'white',
-                  padding: '8px 14px',
-                  borderRadius: 6,
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  letterSpacing: '0.06em',
-                  textTransform: 'uppercase' as const,
-                  border: '1px solid rgba(255,255,255,0.2)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease',
-                  fontFamily: 'system-ui, sans-serif'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.2)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.1)';
-                }}
-              >
-                <ImageIcon className="w-3 h-3" />
-                <span className="hidden sm:inline">Ảnh Tư Liệu</span>
-                <span className="sm:hidden">Ảnh</span>
-              </button>
+
+              <div className="h-6 w-px bg-white/20 hidden md:block" />
+
+              {/* Quick Actions */}
+              <div className="hidden sm:flex items-center gap-4">
+                <button
+                  onClick={() => setShowBiography(true)}
+                  className="px-4 py-2 bg-gold-accent text-ink-black text-[10px] font-bold tracking-widest uppercase rounded-sm hover:scale-105 transition-transform"
+                >
+                  Tiểu Sử Bác Hồ
+                </button>
+              </div>
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center gap-6">
+            <div className="hidden xl:flex items-center gap-8">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: 'rgba(255,255,255,0.8)',
-                    fontSize: '0.75rem',
-                    letterSpacing: '0.1em',
-                    textTransform: 'uppercase' as const,
-                    fontWeight: 500,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    fontFamily: 'system-ui, sans-serif',
-                    padding: '8px 0'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = '#C9A227';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'rgba(255,255,255,0.8)';
-                  }}
+                  className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase hover:text-gold-accent transition-colors"
                 >
                   {item.label}
                 </button>
@@ -218,44 +153,21 @@ export default function App() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'rgba(255,255,255,0.8)',
-                cursor: 'pointer',
-                padding: 8
-              }}
-              className="lg:hidden"
+              className="xl:hidden text-white/80 p-2"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
 
           {/* Mobile Menu */}
           {mobileMenuOpen && (
-            <div style={{
-              borderTop: '1px solid rgba(255,255,255,0.1)',
-              paddingTop: 16,
-              paddingBottom: 16
-            }} className="lg:hidden">
-              <div className="flex flex-col gap-3">
+            <div className="xl:hidden pb-10 pt-4 border-t border-white/10 animate-in fade-in slide-in-from-top-4 duration-300">
+              <div className="grid grid-cols-2 gap-4">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: 'rgba(255,255,255,0.8)',
-                      fontSize: '0.8rem',
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase' as const,
-                      fontWeight: 500,
-                      cursor: 'pointer',
-                      textAlign: 'left' as const,
-                      padding: '8px 0',
-                      fontFamily: 'system-ui, sans-serif'
-                    }}
+                    className="text-[11px] font-bold text-white/60 uppercase tracking-widest py-3 hover:text-gold-accent text-left"
                   >
                     {item.label}
                   </button>
@@ -267,13 +179,15 @@ export default function App() {
       </nav>
 
       {/* Main Content */}
-      <main className="pt-16">
+      <main className="pt-20">
         <Hero onOpenArchive={() => setShowArchive(true)} onOpenBiography={() => setShowBiography(true)} />
         <Introduction />
         <KeyThoughts />
+        <DailyInspiration />
         <GoldenOpportunity />
         <DataComparison />
         <Timeline />
+        <DigitalMuseum />
         <LiberationRevolution />
         <DeclarationVideo />
         <KnowledgeQuiz />

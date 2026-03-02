@@ -100,7 +100,9 @@ export function Footer() {
                 {[
                   { id: 'gioi-thieu', label: 'Giới Thiệu' },
                   { id: 'tu-tuong', label: 'Bối Cảnh' },
+                  { id: 'cam-hung', label: 'Khoảnh khắc' },
                   { id: 'lich-su', label: 'Dòng thời gian' },
+                  { id: 'bao-tang-so', label: 'Bảo tàng số' },
                   { id: 'trac-nghiem', label: 'Trắc nghiệm' },
                   { id: 'trich-dan', label: 'Trích Dẫn' }
                 ].map((item) => (

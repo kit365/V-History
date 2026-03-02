@@ -21,7 +21,6 @@ interface Document {
     paragraphs: string[];
     officialLink: string;
 }
-
 const documents: Document[] = [
     {
         id: '1',
@@ -30,7 +29,7 @@ const documents: Document[] = [
         description: "Tác phẩm vạch trần tội ác của thực dân Pháp tại các thuộc địa và kêu gọi các dân tộc bị áp bức đứng lên đấu tranh.",
         category: 'book',
         coverColor: '#7B2C3E',
-        coverImage: biaBanAn, 
+        coverImage: biaBanAn,
         paragraphs: [
             "Dưới cái tên 'khai hóa' giả tạo, thực dân Pháp đã mang đến cho các dân tộc thuộc địa những xiềng xích tàn bạo nhất. Chúng biến con người thành những vật hy sinh cho quyền lợi của chính quốc thông qua chế độ thuế máu và sưu dịch nặng nề.",
             "Bản án này không chỉ là lời tố cáo tội ác dã man của thực dân Pháp tại Việt Nam, mà còn là hồi chuông thức tỉnh toàn bộ các dân tộc bị áp bức trên thế giới. Người vạch trần sự bóc lột sức lao động đến kiệt quệ và những đạo luật bất công nhằm duy trì sự ngu dân để dễ bề cai trị.",
@@ -112,6 +111,132 @@ const documents: Document[] = [
             "Dù phải từ biệt thế giới này, lòng yêu thương của Người vẫn để lại cho toàn dân, cho toàn quân, cho các cháu thanh niên và nhi đồng. Di chúc là bản thiết kế tương lai cho một dân tộc tự cường và nhân văn."
         ],
         officialLink: "https://www.moj.gov.vn/qt/cacchuyenmuc/Lists/45NamDiChucHCM/Attachments/5/5.%20Di%20chuc-Ban%20cong%20bo%20nam%201969.pdf"
+    },
+    {
+        id: '7',
+        title: "Lời kêu gọi toàn quốc kháng chiến",
+        year: "1946",
+        description: "Lời hiệu triệu thiêng liêng hối thúc cả dân tộc đứng lên chiến đấu bảo vệ nền độc lập vừa giành được.",
+        category: 'document',
+        coverColor: '#3D0C11',
+        paragraphs: [
+            "Hỡi đồng bào toàn quốc! Chúng ta muốn hòa bình, chúng ta đã nhân nhượng. Nhưng chúng ta càng nhân nhượng, thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa!",
+            "Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng để giữ vững quyền tự do ấy.",
+            "Giờ chiến đấu đã đến! Bất kỳ đàn ông, đàn bà, bất kỳ người già, người trẻ, không chia tôn giáo, đảng phái, dân tộc. Hễ là người Việt Nam thì phải đứng lên đánh thực dân Pháp để cứu Tổ quốc."
+        ],
+        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/loi-keu-goi-toan-quoc-khang-chien-am-vang-hon-song-nui-7389"
+    },
+    {
+        id: '8',
+        title: "Thư gửi các học sinh",
+        year: "1945",
+        description: "Bức thư Bác gửi học sinh cả nước nhân ngày khai giảng đầu tiên của nước Việt Nam Dân chủ Cộng hòa.",
+        category: 'document',
+        coverColor: '#1A3A5F',
+        paragraphs: [
+            "Non sông Việt Nam có trở nên tươi đẹp hay không, dân tộc Việt Nam có bước tới đài vinh quang để sánh vai với các cường quốc năm châu được hay không, chính là nhờ một phần lớn ở công học tập của các em.",
+            "Ngày hôm nay là ngày khai trường đầu tiên ở nước Việt Nam Độc lập. Sau 80 năm trời nô lệ làm cho nước nhà bị yếu hèn, ngày nay chúng ta cần xây dựng lại cơ đồ mà tổ tiên đã để lại cho chúng ta.",
+            "Các em hãy cố gắng siêng năng học tập, ngoan ngoãn, nghe thầy, yêu bạn để sau này trở thành những người công dân có ích cho đất nước."
+        ],
+        officialLink: "https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=5035"
+    },
+    {
+        id: '9',
+        title: "Dân vận",
+        year: "1949",
+        description: "Bài báo quan trọng vạch rõ bản chất và phương pháp của công tác dân vận trong xây dựng và bảo vệ đất nước.",
+        category: 'book',
+        coverColor: '#2C3E50',
+        paragraphs: [
+            "Vấn đề Dân vận rất quan trọng. Dân vận kém thì việc gì cũng kém. Dân vận khéo thì việc gì cũng thành công. Đây là kim chỉ nam cho mọi hoạt động của cán bộ Đảng và Nhà nước.",
+            "Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân. Công việc đổi mới, xây dựng là trách nhiệm của dân. Sự nghiệp kháng chiến, kiến quốc là công việc của dân.",
+            "Dân vận không phải là chỉ nói suông, không phải chỉ ngồi trong phòng giấy mà chỉ tay năm ngón. Phải óc nghĩ, mắt trông, tai nghe, chân đi, miệng nói, tay làm."
+        ],
+        officialLink: "https://danvan.vn/tin-tuc/ky-niem-74-nam-ngay-chu-tich-ho-chi-minh-viet-bai-bao-dan-van-15101949-15102023-18151"
+    },
+    {
+        id: '10',
+        title: "Lời kêu gọi Tổng khởi nghĩa",
+        year: "8/1945",
+        description: "Lời hiệu triệu quyết định giờ chót của Bác Hồ gửi đồng bào cả nước trước cuộc hồi sinh của dân tộc.",
+        category: 'document',
+        coverColor: '#B22222',
+        paragraphs: [
+            "Giờ quyết định cho vận mệnh dân tộc ta đã đến. Toàn quốc đồng bào hãy đứng dậy đem sức ta mà tự giải phóng cho ta. Nhiều dân tộc bị xiềng xích trên thế giới đang vùng dậy giành độc lập.",
+            "Chúng ta không thể chậm trễ. Tiến lên! Tiến lên! Dưới lá cờ Việt Minh, đồng bào hãy dũng cảm tiến lên! Quân thù đã quỵ ngã, cơ hội ngàn năm có một đang ở trong tay chúng ta.",
+            "Toàn thể đồng bào hãy đoàn kết chặt chẽ thành một khối thống nhất. Sự lãnh đạo của Tổng bộ Việt Minh sẽ cùng các cấp chính quyền cách mạng đưa đất nước đến thắng lợi cuối cùng."
+        ],
+        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16016/loi-keu-goi-tong-khoi-nghia-cua-chu-tich-ho-chi-minh.html"
+    },
+    {
+        id: '11',
+        title: "Đạo đức cách mạng",
+        year: "1958",
+        description: "Tác phẩm lý luận nhấn mạnh vai trò của đạo đức đối với người cán bộ: 'Cũng như sông có nguồn mới có nước'.",
+        category: 'book',
+        coverColor: '#4B0082',
+        paragraphs: [
+            "Làm cách mạng để cải tạo xã hội cũ thành xã hội mới là một sự nghiệp rất vẻ vang, nhưng nó cũng là một nhiệm vụ rất nặng nề, một cuộc đấu tranh rất phức tạp, lâu dài và gian khổ.",
+            "Người cách mạng phải có đạo đức cách mạng làm nền tảng, mới hoàn thành được nhiệm vụ cách mạng vẻ vang. Có đạo đức cách mạng thì khi gặp khó khăn, gian khổ, thất bại, cũng không rụt rè, lùi bước.",
+            "Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố. Cũng như ngọc càng mài càng sáng, vàng càng luyện càng trong."
+        ],
+        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/dao-duc-cach-mang-la-cai-goc-cua-nguoi-cach-mang-7412"
+    },
+    {
+        id: '12',
+        title: "Vi-ét Nam yêu cầu ca",
+        year: "1919",
+        description: "Bản yêu sách 8 điểm gửi Hội nghị Versailles, lần đầu tiên vang lên tiếng đòi quyền lợi của dân tộc Việt Nam.",
+        category: 'document',
+        coverColor: '#004225',
+        paragraphs: [
+            "Thay mặt cho nhóm những người yêu nước Việt Nam, Nguyễn Ái Quốc đã gửi tới hội nghị hòa bình bản yêu sách đòi các quyền tự do tối thiểu: tự do ngôn luận, tự do lập hội và tự do đi lại.",
+            "Dù không được chấp nhận ngay lúc đó, nhưng bản yêu sách đã gây chấn động dư luận Pháp và quốc tế, khẳng định ý chí tự chủ của một dân tộc không chấp nhận kiếp nô lệ.",
+            "Đây là mốc son đánh dấu bước chuyển mình của phong trào cứu nước Việt Nam từ hướng đi cũ sang con đường đấu tranh mới phù hợp với xu thế thời đại."
+        ],
+        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16035/ban-yeu-sach-cua-nhan-dan-an-nam-va-nguyen-ai-quoc.html"
+    },
+    {
+        id: '13',
+        title: "Quân lệnh số 1",
+        year: "13/8/1945",
+        description: "Lệnh tấn công của Ủy ban Khởi nghĩa toàn quốc, chính thức bắt đầu cuộc Tổng khởi nghĩa Tháng Tám.",
+        category: 'document',
+        coverColor: '#800000',
+        paragraphs: [
+            "Hỡi quân dân toàn quốc! Giờ tổng khởi nghĩa đã đánh! Cơ hội có một cho quân dân Việt Nam vùng dậy giành độc lập dân tộc đã tới!",
+            "Chúng ta phải hành động cho nhanh, với một tinh thần vô cùng quả cảm, vô cùng thận trọng! Cuộc khởi nghĩa này nhất định phải thành công để cứu quốc gia khỏi thảm cảnh diệt vong.",
+            "Tất cả các lực lượng vũ trang và nhân dân phải tuân thủ mệnh lệnh, tập trung hỏa lực và sức mạnh để đánh chiếm các cơ quan đầu não của quân thù ngay trong đêm nay."
+        ],
+        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/15891/quan-lenh-so-1-cua-uy-ban-khoi-nghia-toan-quoc.html"
+    },
+    {
+        id: '14',
+        title: "Báo Thanh Niên",
+        year: "1925",
+        description: "Tờ báo cách mạng đầu tiên do Nguyễn Ái Quốc sáng lập, đặt nền móng tư tưởng cho sự ra đời của Đảng.",
+        category: 'book',
+        coverColor: '#4169E1',
+        paragraphs: [
+            "Báo Thanh Niên không chỉ là công cụ truyền bá chủ nghĩa Mác-Lênin mà còn là sợi dây kết nối các chiến sĩ yêu nước trong và ngoài nước chuẩn bị cho một cuộc cách mạng quy mô.",
+            "Các bài viết trên báo sử dụng ngôn ngữ bình dân, dễ hiểu nhưng tràn đầy lửa cách mạng, vạch trần bộ mặt của kẻ thù và chỉ ra con đường giải phóng đúng đắn.",
+            "Sự ra đời của tờ báo đã đánh dấu bước ngoặt trong công tác tuyên truyền và tổ chức khởi nghĩa, biến những ý chí lẻ tẻ thành một phong trào có tổ chức và định hướng."
+        ],
+        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/bao-thanh-nien-va-vai-tro-truyen-ba-ly-luan-cach-mang-7456"
+    },
+    {
+        id: '15',
+        title: "Kháng chiến nhất định thắng lợi",
+        year: "1947",
+        description: "Tác phẩm chiến lược vạch ra đường lối trường kỳ kháng chiến, củng cố niềm tin thắng lợi cho dân tộc.",
+        category: 'book',
+        coverColor: '#A0522D',
+        paragraphs: [
+            "Cuộc kháng chiến của dân tộc ta là một cuộc kháng chiến toàn dân, toàn diện, trường kỳ và tự lực cánh sinh. Chúng ta lấy yếu đánh mạnh, lấy nhân nghĩa thắng hung tàn.",
+            "Mỗi người dân là một chiến sĩ, mỗi làng xóm là một pháo đài. Sự đoàn kết vô địch của nhân dân chính là bảo chứng lớn nhất cho thắng lợi cuối cùng trước thực dân Pháp.",
+            "Dù gian khổ, hy sinh nhưng với ý chí kiên định và sự lãnh đạo tài tình, chúng ta nhất định sẽ quét sạch quân thù, giành lại giang sơn gấm vóc cho tổ tiên."
+        ],
+        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/tac-pham-khang-chien-nhat-dinh-thang-loi-va-vai-tro-chien-luoc-7489"
     }
 ];
 
@@ -163,7 +288,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
                             <p style={{ fontSize: '0.65rem', color: '#8B2323', letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0, fontWeight: 800 }}>Thư Viện Di Sản Hồ Chí Minh</p>
                         </div>
                     </div>
-                    
+
                     <div style={{ display: 'flex', gap: 15, alignItems: 'center' }}>
                         <div style={{ display: 'flex', background: 'rgba(139, 35, 35, 0.05)', padding: 4, borderRadius: 100, border: '1px solid rgba(201, 162, 39, 0.3)' }}>
                             {['all', 'book', 'document'].map((f) => (
@@ -185,7 +310,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
                     {filteredDocs.map((doc) => (
                         <div key={doc.id} className="book-card" style={{ display: 'flex', gap: 24, background: 'white', padding: 24, borderRadius: 2, border: '1px solid rgba(139, 35, 35, 0.1)', cursor: 'pointer', position: 'relative', overflow: 'hidden' }} onClick={() => setSelectedDoc(doc)}>
                             <div style={{ position: 'absolute', top: 0, right: 0, width: 40, height: 40, background: 'rgba(201, 162, 39, 0.1)', clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
-                            
+
                             {/* Bìa Sách 3D */}
                             <div className="book-cover" style={{ width: 120, height: 180, background: doc.coverColor, borderRadius: '2px 4px 4px 2px', flexShrink: 0, overflow: 'hidden' }}>
                                 <div className="book-spine" />
@@ -220,7 +345,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
             {selectedDoc && (
                 <div onClick={() => setSelectedDoc(null)} style={{ position: 'fixed', inset: 0, background: 'rgba(26, 26, 26, 0.95)', backdropFilter: 'blur(15px)', zIndex: 10001, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '30px' }}>
                     <div onClick={(e) => e.stopPropagation()} style={{ background: '#FAF6F0', width: '100%', maxWidth: 1150, height: '92vh', borderRadius: 4, overflow: 'hidden', display: 'flex', boxShadow: '0 50px 100px rgba(0,0,0,0.5)', position: 'relative', border: '1px solid #C9A227' }}>
-                        
+
                         {/* Cột trái: Thông tin tác phẩm */}
                         <div style={{ width: 380, background: '#1A1A1A', padding: '60px 40px', color: 'white', display: 'flex', flexDirection: 'column', flexShrink: 0, borderRight: '1px solid rgba(201, 162, 39, 0.3)' }}>
                             <div style={{ width: 200, height: 290, background: selectedDoc.coverColor, margin: '0 auto 40px', borderRadius: 4, overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -232,16 +357,16 @@ export function Archive({ onClose }: { onClose: () => void }) {
                                     </div>
                                 )}
                             </div>
-                            
+
                             <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.8rem', marginBottom: 20, textAlign: 'center', color: '#C9A227', fontWeight: 900 }}>{selectedDoc.title}</h2>
-                            
+
                             <div style={{ display: 'flex', gap: 10, marginBottom: 30, justifyContent: 'center' }}>
                                 <span style={{ border: '1px solid #C9A227', color: '#C9A227', padding: '4px 16px', borderRadius: 2, fontSize: '0.7rem', fontWeight: 800, fontFamily: "'Playfair Display', serif" }}>{selectedDoc.year}</span>
                                 <span style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', padding: '4px 16px', borderRadius: 2, fontSize: '0.7rem', fontFamily: "'Manrope', sans-serif" }}>{selectedDoc.category === 'book' ? 'Tác phẩm' : 'Văn kiện'}</span>
                             </div>
-                            
+
                             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.9rem', lineHeight: 1.8, textAlign: 'justify', marginBottom: 40, fontFamily: "'Manrope', sans-serif", fontStyle: 'italic' }}>{selectedDoc.description}</p>
-                            
+
                             <a href={selectedDoc.officialLink} target="_blank" rel="noopener noreferrer" style={{ marginTop: 'auto', padding: '18px', background: '#8B2323', color: 'white', borderRadius: 2, fontWeight: 800, textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12, transition: '0.3s', fontFamily: "'Playfair Display', serif", letterSpacing: '1px', fontSize: '0.85rem', boxShadow: '0 10px 20px rgba(139, 35, 35, 0.3)' }} onMouseEnter={(e) => e.currentTarget.style.background = '#A52A2A'} onMouseLeave={(e) => e.currentTarget.style.background = '#8B2323'}>
                                 <Eye size={20} /> XEM BẢN GỐC ĐẦY ĐỦ
                             </a>
@@ -251,7 +376,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
                         <div className="custom-scrollbar reading-content" style={{ flex: 1, padding: '80px 100px', overflowY: 'auto', background: '#FFFFFF', position: 'relative' }}>
                             {/* Texture giấy sợi mờ */}
                             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, opacity: 0.05, backgroundImage: 'url("https://www.transparenttextures.com/patterns/paper-fibers.png")', pointerEvents: 'none' }} />
-                            
+
                             <div style={{ maxWidth: 680, margin: '0 auto', position: 'relative', zIndex: 1 }}>
                                 {/* Decorative Header */}
                                 <div style={{ textAlign: 'center', marginBottom: 70 }}>
@@ -264,15 +389,15 @@ export function Archive({ onClose }: { onClose: () => void }) {
                                     {selectedDoc.paragraphs.map((p, idx) => (
                                         <p key={idx} style={{ marginBottom: '2.8rem', textIndent: idx === 0 ? 0 : '3em', position: 'relative' }}>
                                             {idx === 0 && (
-                                                <span style={{ 
-                                                    float: 'left', 
-                                                    fontSize: '5.5rem', 
-                                                    lineHeight: '0.8', 
-                                                    paddingTop: '10px', 
-                                                    paddingRight: '15px', 
-                                                    fontFamily: "'Playfair Display', serif", 
-                                                    color: '#8B2323', 
-                                                    fontWeight: 900 
+                                                <span style={{
+                                                    float: 'left',
+                                                    fontSize: '5.5rem',
+                                                    lineHeight: '0.8',
+                                                    paddingTop: '10px',
+                                                    paddingRight: '15px',
+                                                    fontFamily: "'Playfair Display', serif",
+                                                    color: '#8B2323',
+                                                    fontWeight: 900
                                                 }}>
                                                     {p.charAt(0)}
                                                 </span>
@@ -287,7 +412,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
                                     <FileText size={28} color="#8B2323" style={{ margin: '0 auto 15px' }} />
                                     <p style={{ fontSize: '0.75rem', fontStyle: 'italic', letterSpacing: '0.2em', color: '#8B2323', fontWeight: 700 }}>HẾT TRÍCH ĐOẠN TÁC PHẨM</p>
                                     <div style={{ marginTop: 20, display: 'flex', justifyContent: 'center', gap: 8 }}>
-                                        {[1,2,3].map(i => <div key={i} style={{ width: 4, height: 4, borderRadius: '50%', background: '#C9A227' }} />)}
+                                        {[1, 2, 3].map(i => <div key={i} style={{ width: 4, height: 4, borderRadius: '50%', background: '#C9A227' }} />)}
                                     </div>
                                 </div>
                             </div>

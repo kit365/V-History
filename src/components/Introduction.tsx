@@ -1,4 +1,3 @@
-import React from 'react';
 import { Star } from 'lucide-react';
 // Import ảnh từ đường dẫn của bạn
 import tuongDaiImg from '../utils/picture/tuongdaichutich.jpg';
@@ -20,7 +19,7 @@ const IntroStyles = () => (
       color: var(--text);
       font-family: 'Manrope', sans-serif;
       position: relative;
-      overflow: visible;
+      overflow: hidden;
       background-image: 
         radial-gradient(#d1d1d1 1px, transparent 1px),
         linear-gradient(to bottom, rgba(244, 241, 234, 1), rgba(244, 241, 234, 0.8));

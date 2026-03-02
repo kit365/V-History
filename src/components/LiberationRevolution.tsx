@@ -1,4 +1,3 @@
-import React from 'react';
 // IMPORT ẢNH CỦA BẠN (Tạm giữ thư viện ảnh hiện có, có thể thay đổi sau nếu có ảnh phù hợp hơn)
 import cachMangImg from '../utils/picture/cachmanggiaiphong.png';
 
@@ -48,7 +47,7 @@ const LiberationStyles = () => (
       color: var(--text);
       font-family: 'Manrope', sans-serif;
       position: relative;
-      overflow: visible; /* Để sticky hoạt động tốt */
+      overflow-x: hidden; /* Ngăn scroll ngang nhưng vẫn giữ visible cho Y để sticky hoạt động */
       background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
       background-size: 30px 30px;
       padding-top: 8rem;

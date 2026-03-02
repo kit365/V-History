@@ -1,0 +1,169 @@
+import { Star, Mail, MapPin, Phone, ArrowRight } from 'lucide-react'; // Thay Heart bằng Star cho phù hợp ngữ cảnh
+
+// --- STYLES ---
+const FooterStyles = () => (
+  <style>{`
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Manrope:wght@300;400;600&display=swap');
+
+    :root {
+      --footer-bg: #8B2323; /* Đỏ huyết dụ */
+      --footer-text: #F4F1EA; /* Màu kem sáng */
+      --footer-accent: #C9A227; /* Vàng kim */
+    }
+
+    .custom-footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      font-family: 'Manrope', sans-serif;
+      position: relative;
+      border-top: 8px solid var(--footer-accent); /* Viền vàng trên cùng */
+    }
+
+    /* Pattern trang trí nền mờ */
+    .footer-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(201, 162, 39, 0.2) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.1;
+      pointer-events: none;
+    }
+
+    .footer-brand-title {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1px;
+    }
+
+    .footer-col-title {
+      font-family: 'Playfair Display', serif;
+      color: var(--footer-accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed rgba(201, 162, 39, 0.3);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-link {
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(244, 241, 234, 0.8);
+    }
+
+    .footer-link:hover {
+      color: var(--footer-accent);
+      transform: translateX(5px);
+    }
+
+    .icon-box {
+      background: rgba(201, 162, 39, 0.1);
+      border: 1px solid var(--footer-accent);
+      color: var(--footer-accent);
+    }
+  `}</style>
+);
+
+export function Footer() {
+  return (
+    <>
+      <FooterStyles />
+      <footer className="custom-footer">
+        <div className="footer-pattern"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+            {/* Cột 1: Brand & Intro */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="icon-box w-12 h-12 rounded-full flex items-center justify-center">
+                  <Star className="w-6 h-6 fill-current" />
+                </div>
+                <h3 className="footer-brand-title text-2xl font-bold text-white">
+                  CM Tháng Tám
+                </h3>
+              </div>
+              <p className="text-white/80 leading-relaxed font-light text-sm text-justify">
+                Trang thông tin phân tích lịch sử, làm rõ luận điểm về nguyên nhân thắng lợi của Cách mạng Tháng Tám 1945: Một quá trình chủ động, tất yếu chứ không phải là sự ăn may.
+              </p>
+            </div>
+
+            {/* Cột 2: Liên Kết */}
+            <div>
+              <h3 className="footer-col-title">Điều Hướng</h3>
+              <ul className="space-y-3">
+                {[
+                  { id: 'gioi-thieu', label: 'Giới Thiệu' },
+                  { id: 'tu-tuong', label: 'Bối Cảnh' },
+                  { id: 'lich-su', label: 'Dòng thời gian' },
+                  { id: 'trac-nghiem', label: 'Trắc nghiệm' },
+                  { id: 'trich-dan', label: 'Trích Dẫn' }
+                ].map((item) => (
+                  <li key={item.id}>
+                    <a href={`#${item.id}`} className="footer-link">
+                      <ArrowRight className="w-3 h-3 text-[#C9A227]" />
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Cột 3: Tài Nguyên */}
+            <div>
+              <h3 className="footer-col-title">Tư Liệu</h3>
+              <ul className="space-y-3">
+                {['Sách & Văn Kiện', 'Thư Viện Ảnh', 'Phim Tài Liệu', 'Bài Nghiên Cứu'].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="footer-link">
+                      <ArrowRight className="w-3 h-3 text-[#C9A227]" />
+                      {item}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Cột 4: Liên Hệ */}
+            <div>
+              <h3 className="footer-col-title">Liên Hệ</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3 text-white/80">
+                  <MapPin className="w-5 h-5 text-[#C9A227] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">Hồ Chí Minh, Việt Nam</span>
+                </li>
+                <li className="flex items-start gap-3 text-white/80">
+                  <Mail className="w-5 h-5 text-[#C9A227] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">lienhe@tutuonghcm.vn</span>
+                </li>
+                <li className="flex items-start gap-3 text-white/80">
+                  <Phone className="w-5 h-5 text-[#C9A227] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm">(+84) 1900 1945</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-[#C9A227]/30 pt-8 mt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60">
+              <p className="text-center md:text-left font-light">
+                © 2026 Di Sản Lịch Sử Việt Nam. Tự hào truyền thống dân tộc.
+              </p>
+              <div className="flex gap-6">
+                <a href="#" className="hover:text-[#C9A227] transition-colors">Chính Sách</a>
+                <a href="#" className="hover:text-[#C9A227] transition-colors">Điều Khoản</a>
+                <a href="#" className="hover:text-[#C9A227] transition-colors">Bảo Mật</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}

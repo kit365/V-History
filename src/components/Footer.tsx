@@ -15,7 +15,7 @@ const FooterStyles = () => (
       background-color: var(--footer-bg);
       color: var(--footer-text);
       font-family: 'Manrope', sans-serif;
-      position: relative;
+      overflow: hidden;
       border-top: 8px solid var(--footer-accent); /* Viền vàng trên cùng */
     }
 

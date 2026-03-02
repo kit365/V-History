@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Presentation, User, ChevronRight } from 'lucide-react';
+import { Menu, X, Presentation, ChevronRight } from 'lucide-react';
 import { motion, useScroll } from 'framer-motion';
 import { Hero } from './components/Hero';
 import { Introduction } from './components/Introduction';
@@ -143,7 +143,7 @@ export default function App() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-[10px] font-bold tracking-[0.2em] text-white/70 uppercase hover:text-gold-accent transition-colors"
+                  className="text-[10px] font-bold tracking-[0.2em] text-white uppercase hover:text-gold-accent transition-colors"
                 >
                   {item.label}
                 </button>
@@ -153,7 +153,7 @@ export default function App() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden text-white/80 p-2"
+              className="xl:hidden text-white p-2"
             >
               {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
@@ -167,7 +167,7 @@ export default function App() {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className="text-[11px] font-bold text-white/60 uppercase tracking-widest py-3 hover:text-gold-accent text-left"
+                    className="text-[11px] font-bold text-white uppercase tracking-widest py-3 hover:text-gold-accent text-left"
                   >
                     {item.label}
                   </button>

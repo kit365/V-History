@@ -122,7 +122,7 @@ export function Hero({ onOpenArchive, onOpenBiography }: HeroProps) {
         >
           <button
             onClick={onOpenArchive}
-            className="group relative px-10 py-5 bg-maroon-primary text-white overflow-hidden rounded-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(123,45,62,0.4)]"
+            className="group relative px-10 py-5 bg-maroon-primary text-[#FBDB84] overflow-hidden rounded-sm transition-all duration-300 hover:shadow-[0_0_30px_rgba(123,45,62,0.4)]"
           >
             <span className="relative z-10 text-xs font-bold tracking-widest uppercase">Thư Viện Di Sản</span>
             <div className="absolute inset-0 bg-maroon-dark transform translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
@@ -162,9 +162,6 @@ export function Hero({ onOpenArchive, onOpenBiography }: HeroProps) {
       >
         <div className="flex flex-col items-center gap-3">
           <div className="w-px h-24 bg-gradient-to-b from-maroon-primary/50 to-transparent" />
-          <span className="text-[10px] font-bold tracking-[0.3em] text-[#6B6B6B] vertical-text uppercase">
-            Cuộn để xem
-          </span>
         </div>
       </motion.div>
 

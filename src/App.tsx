@@ -16,12 +16,13 @@ import { Soundscape } from './components/Soundscape';
 export default function App() {
   const [showArchive, setShowArchive] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
+  const [activeSection, setActiveSection] = useState('hero');
 
   const { scrollYProgress } = useScroll();
 
-  // Scroll reveal logic
+  // Scroll reveal logic and active section spy
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
+    const sectionObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
@@ -29,11 +30,26 @@ export default function App() {
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('section').forEach(section => {
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    }, { threshold: 0.4 });
+
+    document.querySelectorAll('section, main > div').forEach(section => {
       section.classList.add('section-reveal');
-      observer.observe(section);
+      sectionObserver.observe(section);
+      if (section.id) {
+        activeObserver.observe(section);
+      }
     });
 
+    return () => {
+      sectionObserver.disconnect();
+      activeObserver.disconnect();
+    };
   }, []);
 
   // Nếu đang xem Archive → render fullscreen
@@ -87,10 +103,33 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="flex justify-between items-center h-20 w-full relative">
             {/* Logo */}
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 shrink-0 cursor-pointer" onClick={() => scrollToSection('hero')}>
               <span className="text-xl text-white font-bold tracking-tighter text-historical">
                 DECODE<span className="text-gold-accent">1945</span>
               </span>
+            </div>
+
+            {/* Nav Actions */}
+            <div className="flex items-center gap-4 sm:gap-6">
+              <button
+                onClick={() => setShowArchive(true)}
+                className="group relative px-6 py-3 rounded-md bg-white/10 hover:bg-white/20 border border-white/30 transition-all duration-300 outline-none flex items-center justify-center overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
+                <span className="relative z-10 text-[14px] sm:text-[15px] text-white tracking-[0.1em] uppercase font-bold transition-transform duration-300 group-hover:scale-105" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Thư Viện Di Sản
+                </span>
+              </button>
+
+              <button
+                onClick={() => setShowGallery(true)}
+                className="group relative px-6 py-3 rounded-md bg-[#C9A227] hover:bg-[#E0B838] border border-[#C9A227] hover:border-[#E0B838] shadow-[0_0_15px_rgba(201,162,39,0.3)] hover:shadow-[0_0_25px_rgba(201,162,39,0.5)] transition-all duration-300 outline-none flex items-center justify-center overflow-hidden"
+              >
+                <div className="absolute inset-0 border border-white/40 rounded-md m-[2px]" />
+                <span className="relative z-10 text-[14px] sm:text-[15px] text-[#1A1A1A] tracking-[0.1em] uppercase font-extrabold transition-transform duration-300 group-hover:scale-105" style={{ fontFamily: "'Playfair Display', serif" }}>
+                  Triển lãm ảnh 1945
+                </span>
+              </button>
             </div>
           </div>
         </div>
@@ -115,14 +154,18 @@ export default function App() {
             >
               {/* Timeline Label - White with mix-blend-difference */}
               <span
-                className="font-sans text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 whitespace-nowrap text-white/60 group-hover:text-white group-hover:font-bold"
+                className={`font-sans text-xs sm:text-sm tracking-widest uppercase transition-all duration-300 whitespace-nowrap 
+                  ${activeSection === item.id ? 'text-white font-bold scale-110' : 'text-white/40 group-hover:text-white/80'}
+                `}
               >
                 {item.label}
               </span>
 
               {/* The Dot Indicator */}
               <div
-                className="w-2 h-2 rounded-full transition-all duration-300 relative z-10 bg-white/50 group-hover:bg-white group-hover:scale-150"
+                className={`w-2 h-2 rounded-full transition-all duration-300 relative z-10 
+                  ${activeSection === item.id ? 'bg-white scale-[1.8] shadow-[0_0_10px_rgba(255,255,255,0.8)]' : 'bg-white/30 group-hover:bg-white/60'}
+                `}
               />
             </button>
           ))}
@@ -131,7 +174,7 @@ export default function App() {
 
       {/* Main Content */}
       <main className="pt-20">
-        <div id="hero"><Hero onOpenArchive={() => setShowArchive(true)} onOpenGallery={() => setShowGallery(true)} /></div>
+        <div id="hero"><Hero /></div>
         <div id="gioi-thieu"><Introduction /></div>
         <div id="lich-su"><Timeline /></div>
         <div id="thoi-co"><GoldenOpportunity /></div>

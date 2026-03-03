@@ -1,12 +1,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import heroBg from '../picture/tuyenngondoclap.png';
+import heroBg from '../picture/main_background3.png';
 
-interface HeroProps {
-  onOpenArchive: () => void;
-  onOpenGallery: () => void;
-}
-export function Hero({ onOpenArchive, onOpenGallery }: HeroProps) {
+export function Hero() {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -132,30 +128,18 @@ export function Hero({ onOpenArchive, onOpenGallery }: HeroProps) {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.8 }}
-          className="flex flex-col items-center mt-12 gap-4"
+          className="flex flex-col items-center mt-12"
         >
-          <div className="flex flex-row gap-12 sm:gap-16 justify-center items-center">
-            <button
-              onClick={onOpenArchive}
-              className="group relative px-2 py-1 text-white/90 transition-all duration-300 hover:text-maroon-primary outline-none"
-            >
-              <span className="relative z-10 text-[16px] sm:text-[18px]" style={{ fontFamily: "'Playfair Display', serif" }}>Thư Viện Di Sản</span>
-            </button>
-
-            <button
-              onClick={() => document.getElementById('gioi-thieu')?.scrollIntoView({ behavior: 'smooth' })}
-              className="group relative px-2 py-1 text-white/90 transition-all duration-300 hover:text-maroon-primary outline-none"
-            >
-              <span className="relative z-10 text-[16px] sm:text-[18px]" style={{ fontFamily: "'Playfair Display', serif" }}>Khám phá lịch sử</span>
-            </button>
-          </div>
-
-          {/* Gallery Button */}
+          {/* Primary Button: Khám phá lịch sử */}
           <button
-            onClick={onOpenGallery}
-            className="group relative px-2 py-1 text-white/90 transition-all duration-300 hover:text-maroon-primary outline-none mt-2"
+            onClick={() => document.getElementById('gioi-thieu')?.scrollIntoView({ behavior: 'smooth' })}
+            className="group relative px-10 py-4 w-60 sm:w-auto bg-[#1A1A1A] transition-all duration-500 hover:bg-[#2A2A2A] hover:shadow-[0_15px_30px_rgba(0,0,0,0.2)] outline-none flex items-center justify-center overflow-hidden"
           >
-            <span className="relative z-10 text-[16px] sm:text-[18px]" style={{ fontFamily: "'Playfair Display', serif" }}>Triển lãm ảnh 1945</span>
+            <div className="absolute inset-0 border border-[#C9A227]/30 m-1" />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#C9A227]/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
+            <span className="relative z-10 text-[13px] sm:text-[14px] text-[#C9A227] tracking-[0.2em] uppercase font-bold transition-transform duration-300 group-hover:scale-[1.02]" style={{ fontFamily: "'Playfair Display', serif" }}>
+              Khám phá lịch sử
+            </span>
           </button>
         </motion.div>
       </motion.div>

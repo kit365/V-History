@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 
 // --- 1. IMPORT HÌNH ẢNH ---
 import trovetoquocImg from '../picture/pacbo_caobang.png';
@@ -10,9 +10,9 @@ import dangcotheImg from '../picture/lenhtongkhoinghia.png';
 import khoidauhanhtrinhImg from '../picture/khoinghiahanoi.png';
 import doanketmotnguoiImg from '../picture/tantrao.png';
 import cachmanggiaiphongImg from '../picture/hanoi.png';
-import apbucImg from '../utils/picture/apbuc.png';
-import danlachuImg from '../utils/picture/danlachu.png';
-import bachodixaImg from '../utils/picture/bachodixa.png';
+import apbucImg from '../picture/khoinghiaHue.png';
+import danlachuImg from '../picture/khoinghiasg.png';
+import bachodixaImg from '../picture/vuabaodai.png';
 import tuyenngondoclapImg from '../utils/picture/tuyenngondoclap.png';
 
 // Import logo búa liềm từ đường dẫn cục bộ của bạn
@@ -326,50 +326,10 @@ export function Timeline() {
   const [activeIndex, setActiveIndex] = useState(0);
   const currentEvent = timelineEvents[activeIndex];
 
-  const timelineRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.6 }
-    );
-    if (timelineRef.current) observer.observe(timelineRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  // Hỗ trợ cuộn chuột
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let lastTime = 0;
-    const handleWheel = (e: WheelEvent) => {
-      const currentTime = new Date().getTime();
-      if (currentTime - lastTime < 800) return; // Debounce 0.8s
-
-      if (e.deltaY > 50) {
-        if (activeIndex < timelineEvents.length - 1) {
-          // e.preventDefault(); // Ngăn cuộn trang khi đang chuyển slide
-          setActiveIndex(prev => prev + 1);
-          lastTime = currentTime;
-        }
-      } else if (e.deltaY < -50) {
-        if (activeIndex > 0) {
-          // e.preventDefault();
-          setActiveIndex(prev => prev - 1);
-          lastTime = currentTime;
-        }
-      }
-    };
-
-    window.addEventListener('wheel', handleWheel, { passive: true });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [activeIndex, isVisible]);
-
   return (
     <>
       <TimelineStyles />
-      <div id="lich-su" ref={timelineRef} className={`page-wrapper stage-${currentEvent.stage}`}>
+      <div id="lich-su" className={`page-wrapper stage-${currentEvent.stage}`}>
         <div className="header-section">
           <div className="header-eyebrow">Dòng Chảy Lịch Sử</div>
           <h2 className="header-title">15 Năm & 15 Ngày</h2>

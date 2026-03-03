@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { X, Image as ImageIcon, Search, Download, Calendar, MapPin } from 'lucide-react';
 
+import img1 from '../picture/thuvienanh/motcohaitrong.png';
+import img2 from '../picture/thuvienanh/xaynenmong.png';
+import img3 from '../picture/thuvienanh/nguoicamlaitrove.png';
+import img4 from '../picture/thuvienanh/cubelai.png';
+import img5 from '../picture/thuvienanh/mattranvietminh.png';
+import img6 from '../picture/thuvienanh/renthanhguom.png';
+import img7 from '../picture/thuvienanh/khongchosungrung.png';
+import img8 from '../picture/thuvienanh/chopthoicovang.png';
+import img9 from '../picture/thuvienanh/canquyettandu.png';
+import img10 from '../picture/thuvienanh/kynguyendoclap.png';
+
 interface Photo {
     id: string;
     url: string;
@@ -14,7 +25,7 @@ interface Photo {
 const photos: Photo[] = [
     {
         id: '1',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+1',
+        url: img1,
         title: '"Một cổ hai tròng" - Lịch sử không có khoảng trống.',
         year: '1940',
         location: 'Đông Dương',
@@ -23,7 +34,7 @@ const photos: Photo[] = [
     },
     {
         id: '2',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+2',
+        url: img2,
         title: 'Xây móng nhà trước cơn bão lớn.',
         year: '1930 - 1939',
         location: 'Việt Nam',
@@ -32,7 +43,7 @@ const photos: Photo[] = [
     },
     {
         id: '3',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+3',
+        url: img3,
         title: 'Người cầm lái trở về.',
         year: '28/01/1941',
         location: 'Pác Bó, Cao Bằng',
@@ -41,7 +52,7 @@ const photos: Photo[] = [
     },
     {
         id: '4',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+4',
+        url: img4,
         title: 'Cú bẻ lái đi trước thời đại.',
         year: 'Tháng 5/1941',
         location: 'Pác Bó, Cao Bằng',
@@ -50,7 +61,7 @@ const photos: Photo[] = [
     },
     {
         id: '5',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+5',
+        url: img5,
         title: 'Mặt trận Việt Minh - Khối đại đoàn kết vô song.',
         year: '1941',
         location: 'Việt Nam',
@@ -59,7 +70,7 @@ const photos: Photo[] = [
     },
     {
         id: '6',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+6',
+        url: img6,
         title: 'Rèn thanh gươm chờ ngày vung kiếm.',
         year: '22/12/1944',
         location: 'Cao Bằng',
@@ -68,7 +79,7 @@ const photos: Photo[] = [
     },
     {
         id: '7',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+7',
+        url: img7,
         title: 'Không chờ sung rụng!',
         year: 'Tháng 3/1945',
         location: 'Ban Thường vụ TW',
@@ -77,7 +88,7 @@ const photos: Photo[] = [
     },
     {
         id: '8',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+8',
+        url: img8,
         title: 'Chớp "Thời cơ vàng" thần tốc.',
         year: 'Giữa tháng 8/1945',
         location: 'Tân Trào, Tuyên Quang',
@@ -86,7 +97,7 @@ const photos: Photo[] = [
     },
     {
         id: '9',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+9',
+        url: img9,
         title: 'Càn quét tàn dư phong kiến, thực dân.',
         year: '19/8 - 30/8/1945',
         location: 'Cả nước',
@@ -95,7 +106,7 @@ const photos: Photo[] = [
     },
     {
         id: '10',
-        url: 'https://placehold.co/800x500/1a1a1a/c9a227?text=Anh+10',
+        url: img10,
         title: 'Kỷ nguyên Độc lập - Tự do.',
         year: '02/09/1945',
         location: 'Quảng trường Ba Đình',

@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 // Import ảnh từ đường dẫn của bạn
-import tuongDaiImg from '../utils/picture/tuongdaichutich.jpg';
+import tuongDaiImg from '../picture/intropic.png';
 
 // --- STYLES ---
 const IntroStyles = () => (

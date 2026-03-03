@@ -3,12 +3,8 @@ import { X, Library, FileText, ArrowRight, Eye } from 'lucide-react';
 
 // --- 1. IMPORT HÌNH ẢNH BÌA TỪ THƯ MỤC CỦA BẠN ---
 // Bạn hãy bỏ comment và trỏ đúng tên file ảnh trong thư mục picture của bạn nhé
-import biaBanAn from '../utils/cover_book/bananchedothucdanphat.jpg';
-import biaDuongKachMenh from '../utils/cover_book/duongcachmenh.jpg';
 import biaNhatKyTrongTu from '../utils/cover_book/nhatkytrongtu.jpg';
 import biaTuyenNgon from '../utils/cover_book/tuyenngondoclap.jpg';
-import biaSuaDoiLoiLamViec from '../utils/cover_book/suadoiloilamviecj.jpg';
-import biaDiChuc from '../utils/cover_book/dichuc.jpg';
 
 interface Document {
     id: string;
@@ -24,41 +20,81 @@ interface Document {
 const documents: Document[] = [
     {
         id: '1',
-        title: "Bản án chế độ thực dân Pháp",
-        year: "1925",
-        description: "Tác phẩm vạch trần tội ác của thực dân Pháp tại các thuộc địa và kêu gọi các dân tộc bị áp bức đứng lên đấu tranh.",
-        category: 'book',
+        title: "Cương lĩnh chính trị đầu tiên",
+        year: "Tháng 2/1930",
+        description: "Điểm xuất phát của '15 năm', vạch sẵn lộ trình đánh đổ đế quốc, phong kiến.",
+        category: 'document',
         coverColor: '#7B2C3E',
-        coverImage: biaBanAn,
         paragraphs: [
-            "Dưới cái tên 'khai hóa' giả tạo, thực dân Pháp đã mang đến cho các dân tộc thuộc địa những xiềng xích tàn bạo nhất. Chúng biến con người thành những vật hy sinh cho quyền lợi của chính quốc thông qua chế độ thuế máu và sưu dịch nặng nề.",
-            "Bản án này không chỉ là lời tố cáo tội ác dã man của thực dân Pháp tại Việt Nam, mà còn là hồi chuông thức tỉnh toàn bộ các dân tộc bị áp bức trên thế giới. Người vạch trần sự bóc lột sức lao động đến kiệt quệ và những đạo luật bất công nhằm duy trì sự ngu dân để dễ bề cai trị.",
-            "Cuốn sách khẳng định một chân lý: Ở đâu có áp bức, ở đó có đấu tranh. Muốn giải phóng dân tộc, không có con đường nào khác ngoài việc đứng lên lật đổ ách thống trị thực dân."
+            "Chủ trương làm tư sản dân quyền cách mạng và thổ địa cách mạng để đi tới xã hội cộng sản.",
+            "Đánh đổ đế quốc chủ nghĩa Pháp và bọn phong kiến. Làm cho nước Nam được hoàn toàn độc lập.",
+            "Cương lĩnh này chứng minh chúng ta không hề đi trong sương mù, mà đã có một định hướng chiến lược rõ ràng ngay từ ngày đầu tiên thành lập Đảng."
         ],
-        officialLink: "https://tennguoidepnhat.net/2012/02/01/b%E1%BA%A3n-an-ch%E1%BA%BF-d%E1%BB%99-th%E1%BB%B1c-dan-phap-ch%C6%B0%C6%A1ng-i/"
+        officialLink: "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/hoi-nghi-tl-dang/cuong-linh-chinh-tri-dau-tien-cua-dang-thang-2-1930-101"
     },
     {
         id: '2',
-        title: "Đường Kách mệnh",
-        year: "1927",
-        description: "Cuốn sách tập hợp các bài giảng của Nguyễn Ái Quốc dùng để huấn luyện cán bộ cách mạng tại Quảng Châu.",
-        category: 'book',
+        title: "Nghị quyết Hội nghị Trung ương 8",
+        year: "Tháng 5/1941",
+        description: "'Cú bẻ lái sinh tử', quyết định đặt nhiệm vụ giải phóng dân tộc lên hàng đầu, tạm gác vấn đề điền địa.",
+        category: 'document',
         coverColor: '#C9A227',
-        coverImage: biaDuongKachMenh,
         paragraphs: [
-            "Cách mệnh là việc chung của cả dân chúng chứ không phải việc một hai người. Cuốn sách tập hợp những bài giảng lý luận thực tiễn nhất để đào tạo những hạt giống đỏ đầu tiên cho phong trào cách mạng Việt Nam.",
-            "Người nhấn mạnh tư cách của một người cách mệnh: Vị công vong tư, giữ chủ nghĩa cho vững, ít lòng tham muốn về vật chất. Đây là nền tảng đạo đức cốt lõi để người cán bộ có thể vượt qua mọi gian khổ, hy sinh.",
-            "Tác phẩm xác định rõ: Cách mệnh Việt Nam là một bộ phận của cách mệnh thế giới. Phải có một Đảng vững bền thì cách mệnh mới thành công, cũng như người cầm lái có vững thuyền mới chạy."
+            "Trong lúc này, quyền lợi của bộ phận của giai cấp phải phục tùng sự sinh tử tồn vong của quốc gia, của dân tộc.",
+            "Nếu không giải quyết được vấn đề dân tộc giải phóng, không đòi lại được độc lập tự do cho toàn thể dân tộc, thì chẳng những toàn quốc gia dân tộc còn chịu mãi kiếp ngựa trâu, mà quyền lợi của bộ phận, giai cấp đến vạn năm cũng không đòi lại được.",
+            "Đây là văn kiện cốt lõi, là linh hồn của việc chuẩn bị lực lượng, chớp đúng thời cơ để tiến tới Tổng khởi nghĩa."
         ],
-        officialLink: "https://hochiminh.vn/page/Article/Book/Detail/review/690018af9420925df30e7e03"
+        officialLink: "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/ban-chap-hanh-trung-uong/khoa-i/nghi-quyet-hoi-nghi-lan-thu-viii-cua-ban-chap-hanh-trung-uong-10"
     },
     {
         id: '3',
+        title: "Chương trình 10 chính sách của Việt Minh",
+        year: "1941",
+        description: "Minh chứng cho việc thu phục lòng người, đại đoàn kết toàn dân tộc (bỏ thuế thân, nông dân có ruộng...).",
+        category: 'document',
+        coverColor: '#2D4A3E',
+        paragraphs: [
+            "Làm cho nước Việt Nam hoàn toàn độc lập.",
+            "Tịch thu tài sản của đế quốc, Việt gian phân phát cho người nghèo. Bỏ sưu thuế, phu phen, muối rượu do Tây đặt ra.",
+            "Chia lại ruộng đất cho công bằng, giảm địa tô, giảm tức, hoãn nợ. Ban bố các quyền tự do dân chủ. Nhờ 10 chính sách thiết thực này, Mặt trận Việt Minh đã quy tụ được sức mạnh của khối đại đoàn kết toàn dân."
+        ],
+        officialLink: "https://mattran.org.vn/phong-trao/chuong-trinh-viet-minh-10-chinh-sach-lon-3972.html"
+    },
+    {
+        id: '4',
+        title: "Chỉ thị 'Nhật - Pháp bắn nhau và hành động của chúng ta'",
+        year: "12/03/1945",
+        description: "Đây là 'vũ khí' mạnh nhất đập tan luận điểm 'há miệng chờ sung', chứng minh ta đã chủ động tấn công từ tận tháng 3.",
+        category: 'document',
+        coverColor: '#1A3A5F',
+        paragraphs: [
+            "Phát động cao trào kháng Nhật cứu nước mạnh mẽ làm tiền đề cho cuộc Tổng khởi nghĩa.",
+            "Thay đổi các khẩu hiệu, chuyển hình thức đấu tranh từ bí mật sang công khai, từ biểu tình tiến lên khởi nghĩa vũ trang du kích tại những nơi đủ điều kiện.",
+            "Bản Chỉ thị là minh chứng đanh thép cho việc Đảng ta không hề ngồi chờ một cách bị động. Sự nhạy bén tuyệt vời này đã biến cuộc đảo chính của kẻ thù thành cơ hội chín muồi cho cách mạng."
+        ],
+        officialLink: "https://tulieuvankien.dangcongsan.vn/van-kien-tu-lieu-ve-dang/ban-chap-hanh-trung-uong/khoa-i/chi-thi-cua-ban-thuong-vu-trung-uong-nhat-phap-ban-nhau-va-hanh-dong-cua-chung-ta-231"
+    },
+    {
+        id: '5',
+        title: "Báo Cờ Giải Phóng / Kèn Gọi Lính / Cứu Quốc",
+        year: "1941-1945",
+        description: "Hình ảnh trang bìa của các tờ báo cách mạng, minh chứng cho công tác tuyên truyền, chuẩn bị lực lượng của Mặt trận Việt Minh.",
+        category: 'book',
+        coverColor: '#4169E1',
+        paragraphs: [
+            "Dưới muôn vàn khó khăn, những tờ báo in thô sơ này chính là vũ khí tư tưởng sắc bén nhất, mang ánh sáng cách mạng len lỏi vào từng làng mạc, góc phố.",
+            "Nội dung các tờ báo liên tục cập nhật tình hình chiến sự thế giới, vạch trần tội ác khủng bố của phát xít, đồng thời truyền đạt các chỉ thị, nghị quyết của Đảng xuống cơ sở.",
+            "Báo chí cách mạng đã làm tròn sứ mệnh lịch sử: Thức tỉnh quần chúng, tổ chức lực lượng và thổi bùng ngọn lửa đấu tranh giải phóng dân tộc."
+        ],
+        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16035/bao-cuthiet-mang.html"
+    },
+    {
+        id: '6',
         title: "Nhật ký trong tù",
         year: "1942 - 1943",
         description: "Tập thơ gồm 133 bài thơ bằng chữ Hán được Bác sáng tác trong thời gian bị chính quyền Tưởng Giới Thạch giam giữ.",
         category: 'book',
-        coverColor: '#2D4A3E',
+        coverColor: '#800000',
         coverImage: biaNhatKyTrongTu,
         paragraphs: [
             "Thân thể ở trong lao - Tinh thần ở ngoài lao. Muốn nên sự nghiệp lớn - Tinh thần càng phải cao. Những vần thơ thép được viết bằng máu và nước mắt trong chuỗi ngày bị đày ải nơi đất khách quê người.",
@@ -68,7 +104,7 @@ const documents: Document[] = [
         officialLink: "https://hochiminh.vn/upload/3000001/20251024/ea88203adf499d8290ea36227a76d2fdNhat_ky_trong_tu.pdf"
     },
     {
-        id: '4',
+        id: '7',
         title: "Tuyên ngôn Độc lập",
         year: "1945",
         description: "Văn kiện lịch sử trọng đại khai sinh ra nước Việt Nam Dân chủ Cộng hòa, khẳng định quyền tự do dân chủ của dân tộc.",
@@ -83,56 +119,12 @@ const documents: Document[] = [
         officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/tuyen-ngon-doc-lap-ang-van-lap-quoc-vi-dai-7396"
     },
     {
-        id: '5',
-        title: "Sửa đổi lối làm việc",
-        year: "1947",
-        description: "Tác phẩm quan trọng về xây dựng Đảng, rèn luyện đạo đức cách mạng và phong cách làm việc của cán bộ.",
-        category: 'book',
-        coverColor: '#5C2230',
-        coverImage: biaSuaDoiLoiLamViec,
-        paragraphs: [
-            "Phê bình và tự phê bình là vũ khí sắc bén để Đảng luôn trong sạch, vững mạnh. Cán bộ phải sửa đổi lối làm việc, chống lại các bệnh chủ quan, hẹp hòi và thói ba hoa trong công tác.",
-            "Người căn dặn: Việc gì có lợi cho dân phải hết sức làm, việc gì có hại cho dân phải hết sức tránh. Phải gần dân, hiểu dân và học hỏi từ dân thay vì đứng trên đầu dân phát mệnh lệnh.",
-            "Tu dưỡng đạo đức cách mạng là việc làm suốt đời. Một tấm gương sống còn có giá trị hơn một trăm bài diễn văn tuyên truyền. Cán bộ phải là người đi trước để làng nước theo sau."
-        ],
-        officialLink: "https://duccqdt.nghean.gov.vn/tu-lieu-nghien-cuu/tac-pham-sua-doi-loi-lam-viec-723900?pageindex=0"
-    },
-    {
-        id: '6',
-        title: "Di chúc",
-        year: "1969",
-        description: "Những lời dặn dò cuối cùng của Bác trước khi đi xa, thể hiện tình yêu vô hạn với Đảng, với nhân dân và đất nước.",
-        category: 'document',
-        coverColor: '#7B2D3E',
-        coverImage: biaDiChuc,
-        paragraphs: [
-            "Điều mong muốn cuối cùng của tôi là: Toàn Đảng, toàn dân ta đoàn kết phấn đấu, xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh, và góp phần xứng đáng vào sự nghiệp cách mạng thế giới.",
-            "Người dặn dò về việc giữ gìn sự đoàn kết trong Đảng như giữ gìn con ngươi của mắt mình. Phải có tình đồng chí thương yêu lẫn nhau và hết lòng phục vụ nhân dân.",
-            "Dù phải từ biệt thế giới này, lòng yêu thương của Người vẫn để lại cho toàn dân, cho toàn quân, cho các cháu thanh niên và nhi đồng. Di chúc là bản thiết kế tương lai cho một dân tộc tự cường và nhân văn."
-        ],
-        officialLink: "https://www.moj.gov.vn/qt/cacchuyenmuc/Lists/45NamDiChucHCM/Attachments/5/5.%20Di%20chuc-Ban%20cong%20bo%20nam%201969.pdf"
-    },
-    {
-        id: '7',
-        title: "Lời kêu gọi toàn quốc kháng chiến",
-        year: "1946",
-        description: "Lời hiệu triệu thiêng liêng hối thúc cả dân tộc đứng lên chiến đấu bảo vệ nền độc lập vừa giành được.",
-        category: 'document',
-        coverColor: '#3D0C11',
-        paragraphs: [
-            "Hỡi đồng bào toàn quốc! Chúng ta muốn hòa bình, chúng ta đã nhân nhượng. Nhưng chúng ta càng nhân nhượng, thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa!",
-            "Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng để giữ vững quyền tự do ấy.",
-            "Giờ chiến đấu đã đến! Bất kỳ đàn ông, đàn bà, bất kỳ người già, người trẻ, không chia tôn giáo, đảng phái, dân tộc. Hễ là người Việt Nam thì phải đứng lên đánh thực dân Pháp để cứu Tổ quốc."
-        ],
-        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/loi-keu-goi-toan-quoc-khang-chien-am-vang-hon-song-nui-7389"
-    },
-    {
         id: '8',
         title: "Thư gửi các học sinh",
         year: "1945",
         description: "Bức thư Bác gửi học sinh cả nước nhân ngày khai giảng đầu tiên của nước Việt Nam Dân chủ Cộng hòa.",
         category: 'document',
-        coverColor: '#1A3A5F',
+        coverColor: '#5C2230',
         paragraphs: [
             "Non sông Việt Nam có trở nên tươi đẹp hay không, dân tộc Việt Nam có bước tới đài vinh quang để sánh vai với các cường quốc năm châu được hay không, chính là nhờ một phần lớn ở công học tập của các em.",
             "Ngày hôm nay là ngày khai trường đầu tiên ở nước Việt Nam Độc lập. Sau 80 năm trời nô lệ làm cho nước nhà bị yếu hèn, ngày nay chúng ta cần xây dựng lại cơ đồ mà tổ tiên đã để lại cho chúng ta.",
@@ -142,20 +134,6 @@ const documents: Document[] = [
     },
     {
         id: '9',
-        title: "Dân vận",
-        year: "1949",
-        description: "Bài báo quan trọng vạch rõ bản chất và phương pháp của công tác dân vận trong xây dựng và bảo vệ đất nước.",
-        category: 'book',
-        coverColor: '#2C3E50',
-        paragraphs: [
-            "Vấn đề Dân vận rất quan trọng. Dân vận kém thì việc gì cũng kém. Dân vận khéo thì việc gì cũng thành công. Đây là kim chỉ nam cho mọi hoạt động của cán bộ Đảng và Nhà nước.",
-            "Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân. Công việc đổi mới, xây dựng là trách nhiệm của dân. Sự nghiệp kháng chiến, kiến quốc là công việc của dân.",
-            "Dân vận không phải là chỉ nói suông, không phải chỉ ngồi trong phòng giấy mà chỉ tay năm ngón. Phải óc nghĩ, mắt trông, tai nghe, chân đi, miệng nói, tay làm."
-        ],
-        officialLink: "https://danvan.vn/tin-tuc/ky-niem-74-nam-ngay-chu-tich-ho-chi-minh-viet-bai-bao-dan-van-15101949-15102023-18151"
-    },
-    {
-        id: '10',
         title: "Lời kêu gọi Tổng khởi nghĩa",
         year: "8/1945",
         description: "Lời hiệu triệu quyết định giờ chót của Bác Hồ gửi đồng bào cả nước trước cuộc hồi sinh của dân tộc.",
@@ -169,74 +147,18 @@ const documents: Document[] = [
         officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16016/loi-keu-goi-tong-khoi-nghia-cua-chu-tich-ho-chi-minh.html"
     },
     {
-        id: '11',
-        title: "Đạo đức cách mạng",
-        year: "1958",
-        description: "Tác phẩm lý luận nhấn mạnh vai trò của đạo đức đối với người cán bộ: 'Cũng như sông có nguồn mới có nước'.",
-        category: 'book',
-        coverColor: '#4B0082',
-        paragraphs: [
-            "Làm cách mạng để cải tạo xã hội cũ thành xã hội mới là một sự nghiệp rất vẻ vang, nhưng nó cũng là một nhiệm vụ rất nặng nề, một cuộc đấu tranh rất phức tạp, lâu dài và gian khổ.",
-            "Người cách mạng phải có đạo đức cách mạng làm nền tảng, mới hoàn thành được nhiệm vụ cách mạng vẻ vang. Có đạo đức cách mạng thì khi gặp khó khăn, gian khổ, thất bại, cũng không rụt rè, lùi bước.",
-            "Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố. Cũng như ngọc càng mài càng sáng, vàng càng luyện càng trong."
-        ],
-        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/dao-duc-cach-mang-la-cai-goc-cua-nguoi-cach-mang-7412"
-    },
-    {
-        id: '12',
-        title: "Vi-ét Nam yêu cầu ca",
-        year: "1919",
-        description: "Bản yêu sách 8 điểm gửi Hội nghị Versailles, lần đầu tiên vang lên tiếng đòi quyền lợi của dân tộc Việt Nam.",
-        category: 'document',
-        coverColor: '#004225',
-        paragraphs: [
-            "Thay mặt cho nhóm những người yêu nước Việt Nam, Nguyễn Ái Quốc đã gửi tới hội nghị hòa bình bản yêu sách đòi các quyền tự do tối thiểu: tự do ngôn luận, tự do lập hội và tự do đi lại.",
-            "Dù không được chấp nhận ngay lúc đó, nhưng bản yêu sách đã gây chấn động dư luận Pháp và quốc tế, khẳng định ý chí tự chủ của một dân tộc không chấp nhận kiếp nô lệ.",
-            "Đây là mốc son đánh dấu bước chuyển mình của phong trào cứu nước Việt Nam từ hướng đi cũ sang con đường đấu tranh mới phù hợp với xu thế thời đại."
-        ],
-        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16035/ban-yeu-sach-cua-nhan-dan-an-nam-va-nguyen-ai-quoc.html"
-    },
-    {
-        id: '13',
+        id: '10',
         title: "Quân lệnh số 1",
         year: "13/8/1945",
         description: "Lệnh tấn công của Ủy ban Khởi nghĩa toàn quốc, chính thức bắt đầu cuộc Tổng khởi nghĩa Tháng Tám.",
         category: 'document',
-        coverColor: '#800000',
+        coverColor: '#2C3E50',
         paragraphs: [
             "Hỡi quân dân toàn quốc! Giờ tổng khởi nghĩa đã đánh! Cơ hội có một cho quân dân Việt Nam vùng dậy giành độc lập dân tộc đã tới!",
             "Chúng ta phải hành động cho nhanh, với một tinh thần vô cùng quả cảm, vô cùng thận trọng! Cuộc khởi nghĩa này nhất định phải thành công để cứu quốc gia khỏi thảm cảnh diệt vong.",
             "Tất cả các lực lượng vũ trang và nhân dân phải tuân thủ mệnh lệnh, tập trung hỏa lực và sức mạnh để đánh chiếm các cơ quan đầu não của quân thù ngay trong đêm nay."
         ],
         officialLink: "https://baotanglichsu.vn/vi/Articles/3096/15891/quan-lenh-so-1-cua-uy-ban-khoi-nghia-toan-quoc.html"
-    },
-    {
-        id: '14',
-        title: "Báo Thanh Niên",
-        year: "1925",
-        description: "Tờ báo cách mạng đầu tiên do Nguyễn Ái Quốc sáng lập, đặt nền móng tư tưởng cho sự ra đời của Đảng.",
-        category: 'book',
-        coverColor: '#4169E1',
-        paragraphs: [
-            "Báo Thanh Niên không chỉ là công cụ truyền bá chủ nghĩa Mác-Lênin mà còn là sợi dây kết nối các chiến sĩ yêu nước trong và ngoài nước chuẩn bị cho một cuộc cách mạng quy mô.",
-            "Các bài viết trên báo sử dụng ngôn ngữ bình dân, dễ hiểu nhưng tràn đầy lửa cách mạng, vạch trần bộ mặt của kẻ thù và chỉ ra con đường giải phóng đúng đắn.",
-            "Sự ra đời của tờ báo đã đánh dấu bước ngoặt trong công tác tuyên truyền và tổ chức khởi nghĩa, biến những ý chí lẻ tẻ thành một phong trào có tổ chức và định hướng."
-        ],
-        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/bao-thanh-nien-va-vai-tro-truyen-ba-ly-luan-cach-mang-7456"
-    },
-    {
-        id: '15',
-        title: "Kháng chiến nhất định thắng lợi",
-        year: "1947",
-        description: "Tác phẩm chiến lược vạch ra đường lối trường kỳ kháng chiến, củng cố niềm tin thắng lợi cho dân tộc.",
-        category: 'book',
-        coverColor: '#A0522D',
-        paragraphs: [
-            "Cuộc kháng chiến của dân tộc ta là một cuộc kháng chiến toàn dân, toàn diện, trường kỳ và tự lực cánh sinh. Chúng ta lấy yếu đánh mạnh, lấy nhân nghĩa thắng hung tàn.",
-            "Mỗi người dân là một chiến sĩ, mỗi làng xóm là một pháo đài. Sự đoàn kết vô địch của nhân dân chính là bảo chứng lớn nhất cho thắng lợi cuối cùng trước thực dân Pháp.",
-            "Dù gian khổ, hy sinh nhưng với ý chí kiên định và sự lãnh đạo tài tình, chúng ta nhất định sẽ quét sạch quân thù, giành lại giang sơn gấm vóc cho tổ tiên."
-        ],
-        officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/tac-pham-khang-chien-nhat-dinh-thang-loi-va-vai-tro-chien-luoc-7489"
     }
 ];
 

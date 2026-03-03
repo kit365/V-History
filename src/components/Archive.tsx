@@ -5,6 +5,8 @@ import { X, Library, FileText, ArrowRight, Eye } from 'lucide-react';
 // Bạn hãy bỏ comment và trỏ đúng tên file ảnh trong thư mục picture của bạn nhé
 import biaNhatKyTrongTu from '../utils/cover_book/nhatkytrongtu.jpg';
 import biaTuyenNgon from '../utils/cover_book/tuyenngondoclap.jpg';
+import biaSuaDoiLoiLamViec from '../utils/cover_book/suadoiloilamviecj.jpg';
+import biaDiChuc from '../utils/cover_book/dichuc.jpg';
 
 interface Document {
     id: string;
@@ -119,6 +121,50 @@ const documents: Document[] = [
         officialLink: "https://hochiminh.vn/tu-tuong-dao-duc-ho-chi-minh/nghien-cuu-tu-tuong-dao-duc-ho-chi-minh/tuyen-ngon-doc-lap-ang-van-lap-quoc-vi-dai-7396"
     },
     {
+        id: '5',
+        title: "Sửa đổi lối làm việc",
+        year: "1947",
+        description: "Tác phẩm quan trọng về xây dựng Đảng, rèn luyện đạo đức cách mạng và phong cách làm việc của cán bộ.",
+        category: 'book',
+        coverColor: '#5C2230',
+        coverImage: biaSuaDoiLoiLamViec,
+        paragraphs: [
+            "Phê bình và tự phê bình là vũ khí sắc bén để Đảng luôn trong sạch, vững mạnh. Cán bộ phải sửa đổi lối làm việc, chống lại các bệnh chủ quan, hẹp hòi và thói ba hoa trong công tác.",
+            "Người căn dặn: Việc gì có lợi cho dân phải hết sức làm, việc gì có hại cho dân phải hết sức tránh. Phải gần dân, hiểu dân và học hỏi từ dân thay vì đứng trên đầu dân phát mệnh lệnh.",
+            "Tu dưỡng đạo đức cách mạng là việc làm suốt đời. Một tấm gương sống còn có giá trị hơn một trăm bài diễn văn tuyên truyền. Cán bộ phải là người đi trước để làng nước theo sau."
+        ],
+        officialLink: "https://duccqdt.nghean.gov.vn/tu-lieu-nghien-cuu/tac-pham-sua-doi-loi-lam-viec-723900?pageindex=0"
+    },
+    {
+        id: '6',
+        title: "Di chúc",
+        year: "1969",
+        description: "Những lời dặn dò cuối cùng của Bác trước khi đi xa, thể hiện tình yêu vô hạn với Đảng, với nhân dân và đất nước.",
+        category: 'document',
+        coverColor: '#7B2D3E',
+        coverImage: biaDiChuc,
+        paragraphs: [
+            "Điều mong muốn cuối cùng của tôi là: Toàn Đảng, toàn dân ta đoàn kết phấn đấu, xây dựng một nước Việt Nam hòa bình, thống nhất, độc lập, dân chủ và giàu mạnh, và góp phần xứng đáng vào sự nghiệp cách mạng thế giới.",
+            "Người dặn dò về việc giữ gìn sự đoàn kết trong Đảng như giữ gìn con ngươi của mắt mình. Phải có tình đồng chí thương yêu lẫn nhau và hết lòng phục vụ nhân dân.",
+            "Dù phải từ biệt thế giới này, lòng yêu thương của Người vẫn để lại cho toàn dân, cho toàn quân, cho các cháu thanh niên và nhi đồng. Di chúc là bản thiết kế tương lai cho một dân tộc tự cường và nhân văn."
+        ],
+        officialLink: "https://www.moj.gov.vn/qt/cacchuyenmuc/Lists/45NamDiChucHCM/Attachments/5/5.%20Di%20chuc-Ban%20cong%20bo%20nam%201969.pdf"
+    },
+    {
+        id: '7',
+        title: "Lời kêu gọi toàn quốc kháng chiến",
+        year: "1946",
+        description: "Lời hiệu triệu thiêng liêng hối thúc cả dân tộc đứng lên chiến đấu bảo vệ nền độc lập vừa giành được.",
+        category: 'document',
+        coverColor: '#3D0C11',
+        paragraphs: [
+            "Hỡi đồng bào toàn quốc! Chúng ta muốn hòa bình, chúng ta đã nhân nhượng. Nhưng chúng ta càng nhân nhượng, thực dân Pháp càng lấn tới, vì chúng quyết tâm cướp nước ta lần nữa!",
+            "Không! Chúng ta thà hy sinh tất cả, chứ nhất định không chịu mất nước, nhất định không chịu làm nô lệ. Toàn thể dân tộc Việt Nam quyết đem tất cả tinh thần và lực lượng để giữ vững quyền tự do ấy.",
+            "Giờ chiến đấu đã đến! Bất kỳ đàn ông, đàn bà, bất kỳ người già, người trẻ, không chia tôn giáo, đảng phái, dân tộc. Hễ là người Việt Nam thì phải đứng lên đánh thực dân Pháp để cứu Tổ quốc."
+        ],
+        officialLink: "https://www.qdnd.vn/chinh-tri/cac-van-de/loi-keu-goi-toan-quoc-khang-chien-cua-chu-tich-ho-chi-minh-ngay-19-12-1946-493196"
+    },
+    {
         id: '8',
         title: "Thư gửi các học sinh",
         year: "1945",
@@ -130,10 +176,24 @@ const documents: Document[] = [
             "Ngày hôm nay là ngày khai trường đầu tiên ở nước Việt Nam Độc lập. Sau 80 năm trời nô lệ làm cho nước nhà bị yếu hèn, ngày nay chúng ta cần xây dựng lại cơ đồ mà tổ tiên đã để lại cho chúng ta.",
             "Các em hãy cố gắng siêng năng học tập, ngoan ngoãn, nghe thầy, yêu bạn để sau này trở thành những người công dân có ích cho đất nước."
         ],
-        officialLink: "https://moet.gov.vn/tintuc/Pages/tin-tong-hop.aspx?ItemID=5035"
+        officialLink: "https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/15-9-1945-bac-ho-gui-thu-cho-hoc-sinh-nhan-ngay-khai-truong-dau-tien-671165"
     },
     {
         id: '9',
+        title: "Dân vận",
+        year: "1949",
+        description: "Bài báo quan trọng vạch rõ bản chất và phương pháp của công tác dân vận trong xây dựng và bảo vệ đất nước.",
+        category: 'book',
+        coverColor: '#2C3E50',
+        paragraphs: [
+            "Vấn đề Dân vận rất quan trọng. Dân vận kém thì việc gì cũng kém. Dân vận khéo thì việc gì cũng thành công. Đây là kim chỉ nam cho mọi hoạt động của cán bộ Đảng và Nhà nước.",
+            "Bao nhiêu lợi ích đều vì dân. Bao nhiêu quyền hạn đều của dân. Công việc đổi mới, xây dựng là trách nhiệm của dân. Sự nghiệp kháng chiến, kiến quốc là công việc của dân.",
+            "Dân vận không phải là chỉ nói suông, không phải chỉ ngồi trong phòng giấy mà chỉ tay năm ngón. Phải óc nghĩ, mắt trông, tai nghe, chân đi, miệng nói, tay làm."
+        ],
+        officialLink: "https://www.tapchicongsan.org.vn/web/guest/gop-y-du-thao-cac-van-kien-trinh-dai-hoi-xiii-cua-dang/-/2018/813807/view_content"
+    },
+    {
+        id: '10',
         title: "Lời kêu gọi Tổng khởi nghĩa",
         year: "8/1945",
         description: "Lời hiệu triệu quyết định giờ chót của Bác Hồ gửi đồng bào cả nước trước cuộc hồi sinh của dân tộc.",
@@ -144,10 +204,38 @@ const documents: Document[] = [
             "Chúng ta không thể chậm trễ. Tiến lên! Tiến lên! Dưới lá cờ Việt Minh, đồng bào hãy dũng cảm tiến lên! Quân thù đã quỵ ngã, cơ hội ngàn năm có một đang ở trong tay chúng ta.",
             "Toàn thể đồng bào hãy đoàn kết chặt chẽ thành một khối thống nhất. Sự lãnh đạo của Tổng bộ Việt Minh sẽ cùng các cấp chính quyền cách mạng đưa đất nước đến thắng lợi cuối cùng."
         ],
-        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16016/loi-keu-goi-tong-khoi-nghia-cua-chu-tich-ho-chi-minh.html"
+        officialLink: "https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/ngay-18-8-1945-chu-tich-ho-chi-minh-viet-thu-keu-goi-tong-khoi-nghia-699780"
     },
     {
-        id: '10',
+        id: '11',
+        title: "Đạo đức cách mạng",
+        year: "1958",
+        description: "Tác phẩm lý luận nhấn mạnh vai trò của đạo đức đối với người cán bộ: 'Cũng như sông có nguồn mới có nước'.",
+        category: 'book',
+        coverColor: '#4B0082',
+        paragraphs: [
+            "Làm cách mạng để cải tạo xã hội cũ thành xã hội mới là một sự nghiệp rất vẻ vang, nhưng nó cũng là một nhiệm vụ rất nặng nề, một cuộc đấu tranh rất phức tạp, lâu dài và gian khổ.",
+            "Người cách mạng phải có đạo đức cách mạng làm nền tảng, mới hoàn thành được nhiệm vụ cách mạng vẻ vang. Có đạo đức cách mạng thì khi gặp khó khăn, gian khổ, thất bại, cũng không rụt rè, lùi bước.",
+            "Đạo đức cách mạng không phải trên trời sa xuống. Nó do đấu tranh, rèn luyện bền bỉ hằng ngày mà phát triển và củng cố. Cũng như ngọc càng mài càng sáng, vàng càng luyện càng trong."
+        ],
+        officialLink: "https://www.qdnd.vn/chinh-tri/cac-van-de/tac-pham-dao-duc-cach-mang-voi-doi-ngu-can-bo-lam-cong-tac-ly-luan-cua-dang-hien-nay-559167"
+    },
+    {
+        id: '12',
+        title: "Vi-ét Nam yêu cầu ca",
+        year: "1919",
+        description: "Bản yêu sách 8 điểm gửi Hội nghị Versailles, lần đầu tiên vang lên tiếng đòi quyền lợi của dân tộc Việt Nam.",
+        category: 'document',
+        coverColor: '#004225',
+        paragraphs: [
+            "Thay mặt cho nhóm những người yêu nước Việt Nam, Nguyễn Ái Quốc đã gửi tới hội nghị hòa bình bản yêu sách đòi các quyền tự do tối thiểu: tự do ngôn luận, tự do lập hội và tự do đi lại.",
+            "Dù không được chấp nhận ngay lúc đó, nhưng bản yêu sách đã gây chấn động dư luận Pháp và quốc tế, khẳng định ý chí tự chủ của một dân tộc không chấp nhận kiếp nô lệ.",
+            "Đây là mốc son đánh dấu bước chuyển mình của phong trào cứu nước Việt Nam từ hướng đi cũ sang con đường đấu tranh mới phù hợp với xu thế thời đại."
+        ],
+        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/16035/ban-yeu-sach-cua-nhan-dan-an-nam-va-nguyen-ai-quoc.html"
+    },
+    {
+        id: '13',
         title: "Quân lệnh số 1",
         year: "13/8/1945",
         description: "Lệnh tấn công của Ủy ban Khởi nghĩa toàn quốc, chính thức bắt đầu cuộc Tổng khởi nghĩa Tháng Tám.",
@@ -158,8 +246,22 @@ const documents: Document[] = [
             "Chúng ta phải hành động cho nhanh, với một tinh thần vô cùng quả cảm, vô cùng thận trọng! Cuộc khởi nghĩa này nhất định phải thành công để cứu quốc gia khỏi thảm cảnh diệt vong.",
             "Tất cả các lực lượng vũ trang và nhân dân phải tuân thủ mệnh lệnh, tập trung hỏa lực và sức mạnh để đánh chiếm các cơ quan đầu não của quân thù ngay trong đêm nay."
         ],
-        officialLink: "https://baotanglichsu.vn/vi/Articles/3096/15891/quan-lenh-so-1-cua-uy-ban-khoi-nghia-toan-quoc.html"
-    }
+        officialLink: "https://www.qdnd.vn/tu-lieu-ho-so/ngay-nay-nam-xua/ngay-18-8-1945-chu-tich-ho-chi-minh-viet-thu-keu-goi-tong-khoi-nghia-699780"
+    },
+    {
+        id: '14',
+        title: "Báo Thanh Niên",
+        year: "1925",
+        description: "Tờ báo cách mạng đầu tiên do Nguyễn Ái Quốc sáng lập, đặt nền móng tư tưởng cho sự ra đời của Đảng.",
+        category: 'book',
+        coverColor: '#4169E1',
+        paragraphs: [
+            "Báo Thanh Niên không chỉ là công cụ truyền bá chủ nghĩa Mác-Lênin mà còn là sợi dây kết nối các chiến sĩ yêu nước trong và ngoài nước chuẩn bị cho một cuộc cách mạng quy mô.",
+            "Các bài viết trên báo sử dụng ngôn ngữ bình dân, dễ hiểu nhưng tràn đầy lửa cách mạng, vạch trần bộ mặt của kẻ thù và chỉ ra con đường giải phóng đúng đắn.",
+            "Sự ra đời của tờ báo đã đánh dấu bước ngoặt trong công tác tuyên truyền và tổ chức khởi nghĩa, biến những ý chí lẻ tẻ thành một phong trào có tổ chức và định hướng."
+        ],
+        officialLink: "https://www.qdnd.vn/chinh-tri/cac-van-de/nha-bao-cach-mang-quoc-te-nguyen-ai-quoc-662662"
+    },
 ];
 
 export function Archive({ onClose }: { onClose: () => void }) {
@@ -206,8 +308,8 @@ export function Archive({ onClose }: { onClose: () => void }) {
                     <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                         <Library size={32} color="#8B2323" />
                         <div>
-                            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#1A1A1A', margin: 0, fontWeight: 900 }}>Tàng Kinh Các</h1>
-                            <p style={{ fontSize: '0.65rem', color: '#8B2323', letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0, fontWeight: 800 }}>Thư Viện Di Sản Hồ Chí Minh</p>
+                            <h1 style={{ fontFamily: "'Playfair Display', serif", fontSize: '1.4rem', color: '#1A1A1A', margin: 0, fontWeight: 900 }}>Thư Viện Lịch Sử</h1>
+                            <p style={{ fontSize: '0.65rem', color: '#8B2323', letterSpacing: '0.2em', textTransform: 'uppercase', margin: 0, fontWeight: 800 }}>Các Văn Kiện & Tác Phẩm Quan Trọng</p>
                         </div>
                     </div>
 
@@ -240,7 +342,7 @@ export function Archive({ onClose }: { onClose: () => void }) {
                                     <img src={doc.coverImage} alt={doc.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                                 ) : (
                                     <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: 12, textAlign: 'center', border: '1px solid rgba(255,255,255,0.2)' }}>
-                                        <span style={{ fontSize: '0.45rem', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.15em', marginBottom: 8, fontFamily: "'Playfair Display', serif" }}>HỒ CHÍ MINH</span>
+                                        <span style={{ fontSize: '0.45rem', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.15em', marginBottom: 8, fontFamily: "'Playfair Display', serif" }}>TƯ LIỆU LỊCH SỬ</span>
                                         <div style={{ width: 20, height: 1, background: 'rgba(255,255,255,0.3)', marginBottom: 8 }} />
                                         <span style={{ fontSize: '0.8rem', color: 'white', fontFamily: "'Playfair Display', serif", fontWeight: 700, lineHeight: 1.2 }}>{doc.title}</span>
                                     </div>

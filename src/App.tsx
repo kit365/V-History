@@ -117,17 +117,7 @@ export default function App() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:animate-[shimmer_1.5s_infinite]" />
                 <span className="relative z-10 text-[14px] sm:text-[15px] text-white tracking-[0.1em] uppercase font-bold transition-transform duration-300 group-hover:scale-105" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Thư Viện Di Sản
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowGallery(true)}
-                className="group relative px-6 py-3 rounded-md bg-[#C9A227] hover:bg-[#E0B838] border border-[#C9A227] hover:border-[#E0B838] shadow-[0_0_15px_rgba(201,162,39,0.3)] hover:shadow-[0_0_25px_rgba(201,162,39,0.5)] transition-all duration-300 outline-none flex items-center justify-center overflow-hidden"
-              >
-                <div className="absolute inset-0 border border-white/40 rounded-md m-[2px]" />
-                <span className="relative z-10 text-[14px] sm:text-[15px] text-[#1A1A1A] tracking-[0.1em] uppercase font-extrabold transition-transform duration-300 group-hover:scale-105" style={{ fontFamily: "'Playfair Display', serif" }}>
-                  Triển lãm ảnh 1945
+                  Kho Tư Liệu
                 </span>
               </button>
             </div>
